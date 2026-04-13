@@ -1,0 +1,10 @@
+{
+  "carpet.category.allay": "悦灵",
+  "carpet.rule.allaySilentResonanceEnabled.name": "悦灵静音共振",
+  "carpet.rule.allaySilentResonanceEnabled.desc": "开启后，即使音符盒上方被方块遮挡，悦灵仍会接收到该音符盒的游戏事件并响应。",
+  "carpet.rule.allayThrowCooldownTicks.name": "悦灵投掷冷却刻数",
+  "carpet.rule.allayThrowCooldownTicks.desc": "覆盖悦灵投掷物品后的拾取冷却时间。设为 -1 使用原版逻辑（60 刻）。",
+  "carpet.rule.allayMaxHearingDistance.name": "悦灵最大听觉距离",
+  "carpet.rule.allayMaxHearingDistance.desc": "覆盖悦灵能听到音符盒的最大距离。设为 -1 使用原版逻辑（16 格）。"
+}
+

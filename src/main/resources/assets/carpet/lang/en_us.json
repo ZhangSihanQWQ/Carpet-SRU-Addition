@@ -1,0 +1,10 @@
+{
+  "carpet.category.allay": "Allay",
+  "carpet.rule.allaySilentResonanceEnabled.name": "Allay Silent Resonance",
+  "carpet.rule.allaySilentResonanceEnabled.desc": "If enabled, note blocks blocked by a block above will still emit the note block game event for Allays.",
+  "carpet.rule.allayThrowCooldownTicks.name": "Allay Throw Cooldown Ticks",
+  "carpet.rule.allayThrowCooldownTicks.desc": "Overrides the allay item pickup cooldown after throwing. Use -1 for vanilla (60 ticks).",
+  "carpet.rule.allayMaxHearingDistance.name": "Allay Max Hearing Distance",
+  "carpet.rule.allayMaxHearingDistance.desc": "Overrides the maximum distance at which Allays can hear note blocks. Use -1 for vanilla (16 blocks)."
+}
+
