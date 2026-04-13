@@ -3,7 +3,12 @@
 	"package": "carpetsruaddition.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"allay.ai.AllayEntityMixin",
+		"allay.ai.AllayBrainMixin",
+		"allay.cooldown.BrainMixin",
+		"allay.cooldown.TemptationCooldownTaskMixin",
+		"allay.noteblock.NoteBlockMixin",
+		"allay.range.AllayVibrationCallbackMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
