@@ -36,17 +36,6 @@ public final class SRURecipeToggleState {
         return MANAGED_RECIPES.contains(id) && DISABLED_RECIPES.contains(id);
     }
 
-    public static boolean setEnabled(Identifier id, boolean enabled) {
-        if (!MANAGED_RECIPES.contains(id)) {
-            return false;
-        }
-        if (enabled) {
-            DISABLED_RECIPES.remove(id);
-        } else {
-            DISABLED_RECIPES.add(id);
-        }
-        return true;
-    }
 
     public static void setAllEnabled(boolean enabled) {
         if (enabled) {
