@@ -8,7 +8,11 @@
 		"allay.cooldown.BrainMixin",
 		"allay.cooldown.TemptationCooldownTaskMixin",
 		"allay.noteblock.NoteBlockMixin",
-		"allay.range.AllayVibrationCallbackMixin"
+		"allay.range.AllayVibrationCallbackMixin",
+		"sru.dragonbreath.AreaEffectCloudEntityMixin",
+		"sru.dragonbreath.DragonEggBlockMixin",
+		"sru.dragonbreath.GlassBottleItemMixin",
+		"sru.recipe.RecipeManagerMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

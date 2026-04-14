@@ -15,5 +15,8 @@ public final class CarpetSettings {
 
     @Rule(categories = {RuleCategory.FEATURE, "allay"}, options = {"-1", "0", "16", "32", "64"}, strict = false)
     public static int allayMaxHearingDistance = -1;
+
+    @Rule(categories = {RuleCategory.FEATURE, "sru"})
+    public static boolean renewableDragonBreath = false;
 }
 
