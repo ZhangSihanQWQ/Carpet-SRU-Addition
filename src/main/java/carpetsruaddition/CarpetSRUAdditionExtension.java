@@ -54,6 +54,11 @@ public class CarpetSRUAdditionExtension implements CarpetExtension {
             ? "开启后，可通过龙蛋与龙息瓶交互重新生成可收集的龙息云。"
             : "If enabled, dragon breath clouds become renewable via dragon egg interaction.");
 
+        translations.put("carpet.rule.mcdrCommandAutoCompletion.name", zh ? "MCDR 命令自动补全" : "MCDR Command Auto Completion");
+        translations.put("carpet.rule.mcdrCommandAutoCompletion.desc", zh
+            ? "开启后，聊天框中以 !! 开头的 MCDR / Prime Backup 指令也能使用 Tab 自动补全。"
+            : "If enabled, !!-prefixed MCDR / Prime Backup commands can use Tab completion in the chat box.");
+
         return translations;
     }
 }

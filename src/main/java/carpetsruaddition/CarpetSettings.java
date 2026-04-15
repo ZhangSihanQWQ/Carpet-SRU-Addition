@@ -18,5 +18,8 @@ public final class CarpetSettings {
 
     @Rule(categories = {RuleCategory.FEATURE, "sru"})
     public static boolean renewableDragonBreath = false;
+
+    @Rule(categories = {RuleCategory.FEATURE, "sru"})
+    public static boolean mcdrCommandAutoCompletion = false;
 }
 
