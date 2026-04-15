@@ -31,7 +31,7 @@ public class CarpetSRUAdditionExtension implements CarpetExtension {
         Map<String, String> translations = new HashMap<>();
         boolean zh = lang != null && lang.toLowerCase().startsWith("zh");
 
-        translations.put("carpet.category.allay", zh ? "悦灵" : "Allay Addon");
+        translations.put("carpet.category.allay", zh ? "悦灵" : "Allay");
         translations.put("carpet.category.sru", "SRU");
 
         translations.put("carpet.rule.allaySilentResonanceEnabled.name", zh ? "悦灵静音共振" : "Allay Silent Resonance");
