@@ -14,6 +14,9 @@
 		"sru.dragonbreath.GlassBottleItemMixin",
 		"sru.recipe.RecipeManagerMixin"
 	],
+	"client": [
+		"client.chat.ChatScreenMixin"
+	],
 	"injectors": {
 		"defaultRequire": 1
 	},

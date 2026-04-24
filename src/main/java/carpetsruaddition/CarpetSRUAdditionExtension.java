@@ -31,7 +31,7 @@ public class CarpetSRUAdditionExtension implements CarpetExtension {
         Map<String, String> translations = new HashMap<>();
         boolean zh = lang != null && lang.toLowerCase().startsWith("zh");
 
-        translations.put("carpet.category.allay", zh ? "悦灵" : "Allay Addon");
+        translations.put("carpet.category.allay", zh ? "悦灵" : "Allay");
         translations.put("carpet.category.sru", "SRU");
 
         translations.put("carpet.rule.allaySilentResonanceEnabled.name", zh ? "悦灵静音共振" : "Allay Silent Resonance");
@@ -53,6 +53,11 @@ public class CarpetSRUAdditionExtension implements CarpetExtension {
         translations.put("carpet.rule.renewableDragonBreath.desc", zh
             ? "开启后，可通过龙蛋与龙息瓶交互重新生成可收集的龙息云。"
             : "If enabled, dragon breath clouds become renewable via dragon egg interaction.");
+
+        translations.put("carpet.rule.mcdrCommandAutoCompletion.name", zh ? "MCDR 命令自动补全" : "MCDR Command Auto Completion");
+        translations.put("carpet.rule.mcdrCommandAutoCompletion.desc", zh
+            ? "开启后，聊天框中以 !! 开头的 MCDR / Prime Backup 指令也能使用 Tab 自动补全。"
+            : "If enabled, !!-prefixed MCDR / Prime Backup commands can use Tab completion in the chat box.");
 
         return translations;
     }

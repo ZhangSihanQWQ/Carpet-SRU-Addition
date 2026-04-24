@@ -26,7 +26,7 @@
 		"carpet-sru-addition.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.16.40",
+		"fabricloader": ">=0.16.14",
 		"minecraft": "~1.21.1",
 		"java": ">=21",
 		"fabric-api": "*",
