@@ -21,5 +21,7 @@ public final class CarpetSettings {
 
     @Rule(categories = {RuleCategory.FEATURE, "sru"})
     public static boolean mcdrCommandAutoCompletion = false;
-}
 
+    @Rule(categories = {RuleCategory.FEATURE, "sru","TNT"}, strict = false)
+    public static String limitTntRandomMomentum = "";
+}

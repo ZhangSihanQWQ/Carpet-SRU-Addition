@@ -12,7 +12,8 @@
 		"sru.dragonbreath.AreaEffectCloudEntityMixin",
 		"sru.dragonbreath.DragonEggBlockMixin",
 		"sru.dragonbreath.GlassBottleItemMixin",
-		"sru.recipe.RecipeManagerMixin"
+		"sru.recipe.RecipeManagerMixin",
+		"sru.tnt.TntEntityMixin"
 	],
 	"client": [
 		"client.chat.ChatScreenMixin"
