@@ -1,108 +1,63 @@
 package carpetsruaddition.command;
 
+import carpetsruaddition.CarpetSettings;
 import carpetsruaddition.tnt.LimitedYawManager;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
 
-import java.util.Set;
-import java.util.TreeSet;
-
-/**
- * Command handler for /carpet limitTntRandomMomentum
- */
-public class LimitTntRandomMomentumCommand {
+public final class LimitTntRandomMomentumCommand {
     private LimitTntRandomMomentumCommand() {
     }
 
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
-        dispatcher.register(CommandManager.literal("carpet")
-            .then(CommandManager.literal("limitTntRandomMomentum")
-                .requires(source -> source.hasPermissionLevel(2))
-                // Query current limited angles
-                .executes(context -> queryLimitedAngles(context.getSource()))
-                // Add subcommand
-                .then(CommandManager.literal("add")
-                    .then(CommandManager.argument("angle", IntegerArgumentType.integer(0, 90))
-                        .executes(context -> addLimitedAngle(
-                            context.getSource(),
-                            IntegerArgumentType.getInteger(context, "angle")
-                        ))
-                    )
-                )
-                // Clear subcommand
-                .then(CommandManager.literal("clear")
-                    .then(CommandManager.literal("all")
-                        .executes(context -> clearAllLimitedAngles(context.getSource()))
-                    )
-                    .then(CommandManager.argument("angle", IntegerArgumentType.integer(0, 90))
-                        .executes(context -> clearLimitedAngle(
-                            context.getSource(),
-                            IntegerArgumentType.getInteger(context, "angle")
-                        ))
-                    )
+        dispatcher.register(CommandManager.literal("limitTntRandomMomentum")
+            .requires(source -> source.hasPermissionLevel(2))
+            .then(CommandManager.literal("add")
+                .then(CommandManager.argument("angle", IntegerArgumentType.integer(0, 90))
+                    .executes(context -> {
+                        if (!CarpetSettings.limitTntRandomMomentum) {
+                            context.getSource().sendError(Text.literal("limitTntRandomMomentum rule is not enabled. Use /carpet limitTntRandomMomentum to enable it."));
+                            return 0;
+                        }
+                        int angle = IntegerArgumentType.getInteger(context, "angle");
+                        LimitedYawManager.addLimitedAngle(angle);
+                        context.getSource().sendFeedback(() -> Text.literal("Added angle: " + angle + "°"), true);
+                        return 1;
+                    })
                 )
             )
-        );
-    }
-
-    private static int queryLimitedAngles(ServerCommandSource source) {
-        Set<Integer> limited = LimitedYawManager.getLimitedAngles();
-
-        if (limited.isEmpty()) {
-            source.sendFeedback(() -> Text.literal("No limited angles currently set."), false);
-        } else {
-            Set<Integer> sorted = new TreeSet<>(limited);
-            StringBuilder sb = new StringBuilder("Limited base angles: ");
-            sorted.forEach(angle -> sb.append(angle).append("°, "));
-            // Remove trailing ", "
-            if (sb.length() > 0) {
-                sb.setLength(sb.length() - 2);
-            }
-            source.sendFeedback(() -> Text.literal(sb.toString()), false);
-
-            // Also show the effective ranges
-            StringBuilder ranges = new StringBuilder("Effective ranges:\n");
-            for (int angle : sorted) {
-                ranges.append("  ").append(angle).append("°: ");
-                for (int i = 0; i < 4; i++) {
-                    if (i > 0) ranges.append(", ");
-                    ranges.append((angle + i * 90) % 360).append("°±2°");
+            .then(CommandManager.literal("clear")
+                .executes(context -> {
+                    if (!CarpetSettings.limitTntRandomMomentum) {
+                        context.getSource().sendError(Text.literal("limitTntRandomMomentum rule is not enabled. Use /carpet limitTntRandomMomentum to enable it."));
+                        return 0;
+                    }
+                    LimitedYawManager.clearLimitedAngles();
+                    context.getSource().sendFeedback(() -> Text.literal("Cleared all limited angles."), true);
+                    return 1;
+                })
+            )
+            .executes(context -> {
+                if (!CarpetSettings.limitTntRandomMomentum) {
+                    context.getSource().sendError(Text.literal("limitTntRandomMomentum rule is not enabled. Use /carpet limitTntRandomMomentum to enable it."));
+                    return 0;
                 }
-                ranges.append("\n");
-            }
-            source.sendFeedback(() -> Text.literal(ranges.toString()), false);
+                displayLimitedAngles(context.getSource());
+                return 1;
+            })
+        );
+    }
+
+    private static void displayLimitedAngles(ServerCommandSource source) {
+        var limitedAngles = LimitedYawManager.getLimitedAngles();
+        if (limitedAngles.isEmpty()) {
+            source.sendFeedback(() -> Text.literal("No limited angles set."), false);
+        } else {
+            source.sendFeedback(() -> Text.literal("Limited angles: " + limitedAngles), false);
         }
-
-        return 1;
-    }
-
-    private static int addLimitedAngle(ServerCommandSource source, int angle) {
-        LimitedYawManager.addLimitedAngle(angle);
-        source.sendFeedback(
-            () -> Text.literal("Added angle " + angle + "° to limited angles. Limited ranges: " +
-                angle + "°, " + (angle + 90) + "°, " + (angle + 180) + "°, " + (angle + 270) + "° (each ±2°)"),
-            true
-        );
-        return 1;
-    }
-
-    private static int clearAllLimitedAngles(ServerCommandSource source) {
-        LimitedYawManager.clearLimitedAngles();
-        source.sendFeedback(() -> Text.literal("Cleared all limited angles."), true);
-        return 1;
-    }
-
-    private static int clearLimitedAngle(ServerCommandSource source, int angle) {
-        LimitedYawManager.removeLimitedAngle(angle);
-        source.sendFeedback(
-            () -> Text.literal("Removed angle " + angle + "° from limited angles."),
-            true
-        );
-        return 1;
     }
 }
 

@@ -63,8 +63,9 @@ public class CarpetSRUAdditionExtension implements CarpetExtension {
 
         translations.put("carpet.rule.limitTntRandomMomentum.name", zh ? "限制TNT随机动量" : "Limit TNT Random Momentum");
         translations.put("carpet.rule.limitTntRandomMomentum.desc", zh
-            ? "限制TNT点燃时的随机动量。指定基础角度（0-90°），范围为 (角度±2°)+n*90°，其中 0≤n≤3。使用 /carpet limitTntRandomMomentum 命令管理。"
-            : "Limit random momentum of TNT when lit. Specify base angles (0-90°), ranges are (angle±2°)+n*90° where 0≤n≤3. Use /carpet limitTntRandomMomentum command to manage.");
+            ? "启用后，限制TNT点燃时的随机动量。使用 /limitTntRandomMomentum add <0-90> 和 clear 子命令来管理受限角度。"
+            : "When enabled, restrict random momentum of TNT when lit. Use /limitTntRandomMomentum add and clear subcommands to manage restricted angles.");
+
 
         return translations;
     }
