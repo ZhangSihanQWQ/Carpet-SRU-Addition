@@ -19,7 +19,7 @@ import java.util.*;
  */
 public class LimitedYawManager {
     private static final Logger LOGGER = LoggerFactory.getLogger("carpet-sru-addition");
-    private static final double TOLERANCE = 2.0;
+    private static final double TOLERANCE = 1.0;
     private static final double ANGLE_STEP = 90.0;
     private static final int MAX_ROTATIONS = 4;
 
