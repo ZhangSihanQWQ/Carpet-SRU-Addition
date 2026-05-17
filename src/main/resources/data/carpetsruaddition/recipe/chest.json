@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "redstone",
   "key": {
     "#": {
-      "tag": "carpetsruaddition:chest_logs"
+      "tag": "minecraft:logs"
     }
   },
   "pattern": [

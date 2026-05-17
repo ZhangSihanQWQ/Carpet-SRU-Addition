@@ -3,10 +3,10 @@
   "category": "building",
   "key": {
     "G": {
-      "item": "minecraft:iron_nugget"
+      "item": "minecraft:yellow_wool"
     },
     "B": {
-      "item": "minecraft:deepslate"
+      "item": "minecraft:sponge"
     }
   },
   "pattern": [
@@ -15,7 +15,7 @@
     "GGG"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:tuff"
+    "count": 2,
+    "id": "minecraft:sponge"
   }
 }
