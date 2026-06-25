@@ -1,10 +1,22 @@
 {
   "carpet-sru-addition.category.allay": "Allay",
+  "carpet-sru-addition.category.porting": "Porting",
+  "carpet-sru-addition.category.SRU": "SRU",
+  "carpet-sru-addition.category.TNT": "TNT",
   "carpet-sru-addition.rule.allaySilentResonanceEnabled.name": "Allay Silent Resonance",
   "carpet-sru-addition.rule.allaySilentResonanceEnabled.desc": "If enabled, note blocks blocked by a block above will still emit the note block game event for Allays.",
+  "carpet-sru-addition.rule.allayAiFreezeEnabled.name": "Allay AI Freeze",
+  "carpet-sru-addition.rule.allayAiFreezeEnabled.desc": "Freezes idle Allay AI when no visible player or liked note block is nearby.",
   "carpet-sru-addition.rule.allayThrowCooldownTicks.name": "Allay Throw Cooldown Ticks",
   "carpet-sru-addition.rule.allayThrowCooldownTicks.desc": "Overrides the allay item pickup cooldown after throwing. Use -1 for vanilla (60 ticks).",
   "carpet-sru-addition.rule.allayMaxHearingDistance.name": "Allay Max Hearing Distance",
-  "carpet-sru-addition.rule.allayMaxHearingDistance.desc": "Overrides the maximum distance at which Allays can hear note blocks. Use -1 for vanilla (16 blocks)."
+  "carpet-sru-addition.rule.allayMaxHearingDistance.desc": "Overrides the maximum distance at which Allays can hear note blocks. Use -1 for vanilla (16 blocks).",
+  "carpet-sru-addition.rule.renewableDragonBreath.name": "Renewable Dragon Breath",
+  "carpet-sru-addition.rule.renewableDragonBreath.desc": "Allows dragon breath clouds to be renewed through SRU dragon egg interactions.",
+  "carpet-sru-addition.rule.mcdrCommandAutoCompletion.name": "MCDR Command Auto Completion",
+  "carpet-sru-addition.rule.mcdrCommandAutoCompletion.desc": "Adds client-side tab completion for common !!MCDR command prefixes.",
+  "carpet-sru-addition.rule.limitTntRandomMomentum.name": "Limit TNT Random Momentum",
+  "carpet-sru-addition.rule.limitTntRandomMomentum.desc": "Limits TNT random momentum using the SRU configured angle list.",
+  "carpet-sru-addition.rule.visibleSpectators.name": "Visible Spectators",
+  "carpet-sru-addition.rule.visibleSpectators.desc": "Makes spectators visible for SRU server gameplay compatibility."
 }
-

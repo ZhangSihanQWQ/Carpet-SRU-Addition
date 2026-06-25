@@ -7,8 +7,16 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
+	// Add repositories to retrieve artifacts from in here.
+	// You should only use this when depending on other mods because
+	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
+	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
+	// for more information about repositories.
+	maven { url 'https://maven.fabricmc.net/' }
+	mavenCentral()
 	maven { url 'https://jitpack.io' }
-	maven { url "https://maven.minecraftforge.net/" } // 某些依赖可能需要
+
+	maven { url 'https://masa.dy.fi/maven' }
 }
 
 fabricApi {
@@ -26,16 +34,15 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
-	// 添加 Carpet API 依赖
-	modImplementation "com.github.gnembon:fabric-carpet:${carpet_version}"
-	
+	modImplementation "com.github.gnembon:fabric-carpet:${project.carpet_version}"
 }
 
 processResources {
-	inputs.property "version", project.version
+	def version = project.version
+	inputs.property "version", version
 
 	filesMatching("fabric.mod.json") {
-		expand "version": inputs.properties.version
+		expand "version": version
 	}
 }
 
@@ -54,10 +61,11 @@ java {
 }
 
 jar {
-	inputs.property "projectName", project.name
+	def projectName = project.name
+	inputs.property "projectName", projectName
 
 	from("LICENSE") {
-		rename { "${it}_${project.name}"}
+		rename { "${it}_$projectName"}
 	}
 }
 

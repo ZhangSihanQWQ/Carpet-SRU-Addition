@@ -13,9 +13,12 @@ public final class SRURecipeToggleState {
         return !allSruRecipesEnabled && NAMESPACE.equals(id.getNamespace());
     }
 
+    public static boolean isRecipeDisabled(net.minecraft.registry.RegistryKey<?> key) {
+        return isRecipeDisabled(key.getValue());
+    }
+
 
     public static void setAllEnabled(boolean enabled) {
         allSruRecipesEnabled = enabled;
     }
 }
-

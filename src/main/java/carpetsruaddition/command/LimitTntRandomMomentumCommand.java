@@ -4,6 +4,8 @@ import carpetsruaddition.CarpetSettings;
 import carpetsruaddition.tnt.LimitedYawManager;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
+import net.minecraft.command.permission.Permission;
+import net.minecraft.command.permission.PermissionLevel;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
@@ -14,7 +16,7 @@ public final class LimitTntRandomMomentumCommand {
 
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
         dispatcher.register(CommandManager.literal("limitTntRandomMomentum")
-            .requires(source -> source.hasPermissionLevel(2))
+            .requires(source -> source.getPermissions().hasPermission(new Permission.Level(PermissionLevel.GAMEMASTERS)))
             .then(CommandManager.literal("add")
                 .then(CommandManager.argument("angle", IntegerArgumentType.integer(0, 90))
                     .executes(context -> {
@@ -60,4 +62,3 @@ public final class LimitTntRandomMomentumCommand {
         }
     }
 }
-

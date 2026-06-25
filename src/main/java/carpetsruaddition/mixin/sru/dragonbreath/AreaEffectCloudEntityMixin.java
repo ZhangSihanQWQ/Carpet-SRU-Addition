@@ -2,7 +2,8 @@ package carpetsruaddition.mixin.sru.dragonbreath;
 
 import carpetsruaddition.dragonbreath.access.DragonBreathCloudAccess;
 import net.minecraft.entity.AreaEffectCloudEntity;
-import net.minecraft.nbt.NbtCompound;
+import net.minecraft.storage.ReadView;
+import net.minecraft.storage.WriteView;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -24,16 +25,13 @@ public class AreaEffectCloudEntityMixin implements DragonBreathCloudAccess {
         return this.carpetsruaddition$dragonBreathCloud;
     }
 
-    @Inject(method = "writeCustomDataToNbt", at = @At("TAIL"))
-    private void carpetsruaddition$writeCustomData(NbtCompound nbt, CallbackInfo ci) {
-        nbt.putBoolean("CarpetSRUDragonBreath", this.carpetsruaddition$dragonBreathCloud);
+    @Inject(method = "writeCustomData", at = @At("TAIL"))
+    private void carpetsruaddition$writeCustomData(WriteView view, CallbackInfo ci) {
+        view.putBoolean("CarpetSRUDragonBreath", this.carpetsruaddition$dragonBreathCloud);
     }
 
-    @Inject(method = "readCustomDataFromNbt", at = @At("TAIL"))
-    private void carpetsruaddition$readCustomData(NbtCompound nbt, CallbackInfo ci) {
-        if (nbt.contains("CarpetSRUDragonBreath")) {
-            this.carpetsruaddition$dragonBreathCloud = nbt.getBoolean("CarpetSRUDragonBreath");
-        }
+    @Inject(method = "readCustomData", at = @At("TAIL"))
+    private void carpetsruaddition$readCustomData(ReadView view, CallbackInfo ci) {
+        this.carpetsruaddition$dragonBreathCloud = view.getBoolean("CarpetSRUDragonBreath", false);
     }
 }
-

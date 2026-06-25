@@ -9,6 +9,8 @@
 		"allay.cooldown.TemptationCooldownTaskMixin",
 		"allay.noteblock.NoteBlockMixin",
 		"allay.range.AllayVibrationCallbackMixin",
+		"sru.visible_spectators.EntityMixin",
+		"sru.visible_spectators.ServerPlayerEntityMixin",
 		"sru.dragonbreath.AreaEffectCloudEntityMixin",
 		"sru.dragonbreath.DragonEggBlockMixin",
 		"sru.dragonbreath.GlassBottleItemMixin",
@@ -16,7 +18,9 @@
 		"sru.tnt.TntEntityMixin"
 	],
 	"client": [
-		"client.chat.ChatScreenMixin"
+		"client.chat.ChatScreenMixin",
+		"client.visible_spectators.LivingEntityRendererMixin",
+		"client.visible_spectators.PlayerEntityRendererMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

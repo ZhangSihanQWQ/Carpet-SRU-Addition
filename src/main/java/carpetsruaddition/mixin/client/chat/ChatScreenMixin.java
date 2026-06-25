@@ -2,6 +2,7 @@ package carpetsruaddition.mixin.client.chat;
 
 import carpetsruaddition.CarpetSettings;
 import carpetsruaddition.client.CommandPrefixAutoComplete;
+import net.minecraft.client.input.KeyInput;
 import net.minecraft.client.gui.screen.ChatScreen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import org.lwjgl.glfw.GLFW;
@@ -15,9 +16,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class ChatScreenMixin {
     @Shadow protected TextFieldWidget chatField;
 
-    @Inject(method = "keyPressed(III)Z", at = @At("HEAD"), cancellable = true)
-    private void carpetsruaddition$completeDoubleBang(int keyCode, int scanCode, int modifiers, CallbackInfoReturnable<Boolean> cir) {
-        if (keyCode != GLFW.GLFW_KEY_TAB || !CarpetSettings.mcdrCommandAutoCompletion) {
+    @Inject(method = "keyPressed(Lnet/minecraft/client/input/KeyInput;)Z", at = @At("HEAD"), cancellable = true)
+    private void carpetsruaddition$completeDoubleBang(KeyInput input, CallbackInfoReturnable<Boolean> cir) {
+        if (input.key() != GLFW.GLFW_KEY_TAB || !CarpetSettings.mcdrCommandAutoCompletion) {
             return;
         }
 
@@ -36,4 +37,3 @@ public abstract class ChatScreenMixin {
         cir.setReturnValue(true);
     }
 }
-

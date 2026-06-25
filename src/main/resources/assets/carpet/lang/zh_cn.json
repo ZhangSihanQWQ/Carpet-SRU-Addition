@@ -1,10 +1,22 @@
 {
   "carpet.category.allay": "悦灵",
+  "carpet.category.porting": "移植",
+  "carpet.category.SRU": "SRU",
+  "carpet.category.TNT": "TNT",
   "carpet.rule.allaySilentResonanceEnabled.name": "悦灵静音共振",
   "carpet.rule.allaySilentResonanceEnabled.desc": "开启后，即使音符盒上方被方块遮挡，悦灵仍会接收到该音符盒的游戏事件并响应。",
+  "carpet.rule.allayAiFreezeEnabled.name": "悦灵 AI 冻结",
+  "carpet.rule.allayAiFreezeEnabled.desc": "当附近没有可见玩家或绑定音符盒时，冻结空闲悦灵的 AI。",
   "carpet.rule.allayThrowCooldownTicks.name": "悦灵投掷冷却刻数",
   "carpet.rule.allayThrowCooldownTicks.desc": "覆盖悦灵投掷物品后的拾取冷却时间。设为 -1 使用原版逻辑（60 刻）。",
   "carpet.rule.allayMaxHearingDistance.name": "悦灵最大听觉距离",
-  "carpet.rule.allayMaxHearingDistance.desc": "覆盖悦灵能听到音符盒的最大距离。设为 -1 使用原版逻辑（16 格）。"
+  "carpet.rule.allayMaxHearingDistance.desc": "覆盖悦灵能听到音符盒的最大距离。设为 -1 使用原版逻辑（16 格）。",
+  "carpet.rule.renewableDragonBreath.name": "可再生龙息",
+  "carpet.rule.renewableDragonBreath.desc": "允许通过 SRU 的龙蛋交互机制重新生成龙息云。",
+  "carpet.rule.mcdrCommandAutoCompletion.name": "MCDR 命令自动补全",
+  "carpet.rule.mcdrCommandAutoCompletion.desc": "为常用 !!MCDR 命令前缀添加客户端 Tab 补全。",
+  "carpet.rule.limitTntRandomMomentum.name": "限制 TNT 随机动量",
+  "carpet.rule.limitTntRandomMomentum.desc": "使用 SRU 配置的角度列表限制 TNT 随机动量。",
+  "carpet.rule.visibleSpectators.name": "可见旁观者",
+  "carpet.rule.visibleSpectators.desc": "使旁观者可见，以兼容 SRU 服务器玩法。"
 }
-

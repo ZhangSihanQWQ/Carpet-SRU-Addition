@@ -12,6 +12,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.particle.DragonBreathParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -51,10 +52,11 @@ public abstract class DragonEggBlockMixin extends Block {
             return;
         }
 
-        if (!world.isClient) {
+        if (!world.isClient()) {
+            ItemStack dragonBreath = main.isOf(Items.DRAGON_BREATH) ? main : off;
             AreaEffectCloudEntity cloud = new AreaEffectCloudEntity(world, pos.getX() + 0.5D, pos.getY(), pos.getZ() + 0.5D);
             cloud.setOwner(player);
-            cloud.setParticleType(ParticleTypes.DRAGON_BREATH);
+            cloud.setParticleType(DragonBreathParticleEffect.of(ParticleTypes.DRAGON_BREATH, 1.0F));
             cloud.setRadius(3.0F);
             cloud.setDuration(600);
             cloud.setRadiusGrowth((7.0F - cloud.getRadius()) / (float) cloud.getDuration());
@@ -65,9 +67,9 @@ public abstract class DragonEggBlockMixin extends Block {
             world.syncWorldEvent(WorldEvents.DRAGON_BREATH_CLOUD_SPAWNS, pos, 1);
             world.playSound(null, pos, SoundEvents.ENTITY_ENDER_DRAGON_FLAP, SoundCategory.BLOCKS, 1.0F, 1.0F);
             world.setBlockState(pos, Blocks.AIR.getDefaultState());
+            dragonBreath.decrementUnlessCreative(1, player);
         }
 
-        cir.setReturnValue(ActionResult.success(world.isClient));
+        cir.setReturnValue(world.isClient() ? ActionResult.SUCCESS : ActionResult.SUCCESS_SERVER);
     }
 }
-

@@ -19,11 +19,10 @@ public class GlassBottleItemMixin {
     )
     private Predicate<AreaEffectCloudEntity> carpetsruaddition$modifyPredicate(Predicate<AreaEffectCloudEntity> original) {
         return entity -> {
-            if (!CarpetSettings.renewableDragonBreath || entity.getWorld().isClient) {
+            if (!CarpetSettings.renewableDragonBreath || entity.getEntityWorld().isClient()) {
                 return original.test(entity);
             }
             return original.test(entity) || ((DragonBreathCloudAccess) entity).carpetsruaddition$isDragonBreathCloud();
         };
     }
 }
-

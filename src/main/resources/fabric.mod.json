@@ -3,16 +3,16 @@
 	"id": "carpet-sru-addition",
 	"version": "${version}",
 	"name": "Carpet-SRU-Addition",
-	"description": "A Carpet addon for Allay tweaks, performance improvements, and configurable rules.",
+	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
-		"ZhangSihanQWQ"
+		"Me!"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/carpet-sru-addition/icon.png",
+	"icon": "assets/carpet-sru-addition/lang/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
@@ -23,13 +23,13 @@
 		]
 	},
 	"mixins": [
-		"carpet-sru-addition.mixins.json"
+		"carpet-sru-addition.mixins.json",
+		"carpet-sru-addition.compat.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.16.14",
-		"minecraft": ">=1.21",
+		"fabricloader": ">=0.19.0",
+		"minecraft": "~1.21.11",
 		"java": ">=21",
-		"fabric-api": "*",
-		"carpet": "*"
+		"fabric-api": "*"
 	}
 }

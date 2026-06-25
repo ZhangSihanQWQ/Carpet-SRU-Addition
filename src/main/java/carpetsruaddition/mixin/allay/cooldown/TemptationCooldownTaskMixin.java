@@ -3,7 +3,7 @@ package carpetsruaddition.mixin.allay.cooldown;
 import carpetsruaddition.CarpetSettings;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.brain.MemoryModuleType;
-import net.minecraft.entity.ai.brain.task.TemptationCooldownTask;
+import net.minecraft.entity.ai.brain.task.TickCooldownTask;
 import net.minecraft.server.world.ServerWorld;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -12,16 +12,16 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(TemptationCooldownTask.class)
+@Mixin(TickCooldownTask.class)
 public abstract class TemptationCooldownTaskMixin {
     @Shadow
     @Final
-    private MemoryModuleType<Integer> moduleType;
+    private MemoryModuleType<Integer> cooldownModule;
 
     @Inject(method = "shouldKeepRunning", at = @At("HEAD"), cancellable = true)
     private void carpetsruaddition$forceFinish(ServerWorld world, LivingEntity entity, long time, CallbackInfoReturnable<Boolean> cir) {
-        if (this.moduleType == MemoryModuleType.ITEM_PICKUP_COOLDOWN_TICKS && CarpetSettings.allayThrowCooldownTicks != -1) {
-            entity.getBrain().getOptionalRegisteredMemory(this.moduleType).ifPresent(ticks -> {
+        if (this.cooldownModule == MemoryModuleType.ITEM_PICKUP_COOLDOWN_TICKS && CarpetSettings.allayThrowCooldownTicks != -1) {
+            entity.getBrain().getOptionalRegisteredMemory(this.cooldownModule).ifPresent(ticks -> {
                 if (ticks <= 0) {
                     cir.setReturnValue(false);
                 }
@@ -29,4 +29,3 @@ public abstract class TemptationCooldownTaskMixin {
         }
     }
 }
-

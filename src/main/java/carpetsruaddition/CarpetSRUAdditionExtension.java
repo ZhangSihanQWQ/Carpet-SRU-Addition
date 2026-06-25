@@ -34,12 +34,19 @@ public class CarpetSRUAdditionExtension implements CarpetExtension {
         boolean zh = lang != null && lang.toLowerCase().startsWith("zh");
 
         translations.put("carpet.category.allay", zh ? "悦灵" : "Allay");
-        translations.put("carpet.category.sru", "SRU");
+        translations.put("carpet.category.SRU", "SRU");
+        translations.put("carpet.category.TNT", "TNT");
+        translations.put("carpet.category.porting", zh ? "移植" : "Porting");
 
         translations.put("carpet.rule.allaySilentResonanceEnabled.name", zh ? "悦灵静音共振" : "Allay Silent Resonance");
         translations.put("carpet.rule.allaySilentResonanceEnabled.desc", zh
             ? "开启后，即使音符盒上方被方块遮挡，悦灵仍会接收到该音符盒的游戏事件并响应。"
             : "If enabled, note blocks blocked by a block above will still emit the note block game event for Allays.");
+
+        translations.put("carpet.rule.allayAiFreezeEnabled.name", zh ? "悦灵 AI 冻结" : "Allay AI Freeze");
+        translations.put("carpet.rule.allayAiFreezeEnabled.desc", zh
+            ? "当附近没有可见玩家或绑定音符盒时，冻结空闲悦灵的 AI。"
+            : "Freezes idle Allay AI when no visible player or liked note block is nearby.");
 
         translations.put("carpet.rule.allayThrowCooldownTicks.name", zh ? "悦灵投掷冷却时间" : "Allay Throw Cooldown Ticks");
         translations.put("carpet.rule.allayThrowCooldownTicks.desc", zh
@@ -66,8 +73,11 @@ public class CarpetSRUAdditionExtension implements CarpetExtension {
             ? "启用后，限制TNT点燃时的随机动量。使用 /limitTntRandomMomentum add <0-90> 和 clear 子命令来管理受限角度。"
             : "When enabled, restrict random momentum of TNT when lit. Use /limitTntRandomMomentum add and clear subcommands to manage restricted angles.");
 
+        translations.put("carpet.rule.visibleSpectators.name", zh ? "可见旁观者" : "Visible Spectators");
+        translations.put("carpet.rule.visibleSpectators.desc", zh
+            ? "允许生存、创造和冒险模式的玩家看到旁观者模式下的玩家，且旁观者显示为完全不透明的玩家头颅。"
+            : "Allows survival, creative, and adventure players to see spectator players, rendered as fully opaque player heads.");
 
         return translations;
     }
 }
-

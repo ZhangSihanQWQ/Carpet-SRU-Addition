@@ -47,7 +47,7 @@ public final class AllayItemComparison {
             return true;
         }
 
-        if (isHorseArmor(stack) && isHorseArmor(stack2)) {
+        if (isHorseArmor(id1) && isHorseArmor(id2)) {
             return true;
         }
 
@@ -66,11 +66,8 @@ public final class AllayItemComparison {
         return stack.isOf(Items.POTION) || stack.isOf(Items.SPLASH_POTION) || stack.isOf(Items.LINGERING_POTION);
     }
 
-    private static boolean isHorseArmor(ItemStack stack) {
-        return stack.isOf(Items.LEATHER_HORSE_ARMOR)
-            || stack.isOf(Items.IRON_HORSE_ARMOR)
-            || stack.isOf(Items.GOLDEN_HORSE_ARMOR)
-            || stack.isOf(Items.DIAMOND_HORSE_ARMOR);
+    private static boolean isHorseArmor(String id) {
+        return id.endsWith("_horse_armor");
     }
 
     private static boolean areDifferentPotions(ItemStack stack, ItemStack stack2) {
@@ -79,4 +76,3 @@ public final class AllayItemComparison {
         return !Objects.equals(potion1, potion2);
     }
 }
-

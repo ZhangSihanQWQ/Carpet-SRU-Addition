@@ -1,5 +1,6 @@
 package carpetsruaddition.mixin.allay.ai;
 
+import carpetsruaddition.CarpetSettings;
 import carpetsruaddition.allay.access.AllaySleepAccess;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.AllayBrain;
@@ -15,9 +16,8 @@ import java.util.Optional;
 public class AllayBrainMixin {
     @Inject(method = "getLikedPlayer", at = @At("HEAD"), cancellable = true)
     private static void carpetsruaddition$maskPlayerMemory(LivingEntity allay, CallbackInfoReturnable<Optional<ServerPlayerEntity>> cir) {
-        if (allay instanceof AllaySleepAccess access && access.carpetsruaddition$isDeepSleeping()) {
+        if (CarpetSettings.allayAiFreezeEnabled && allay instanceof AllaySleepAccess access && access.carpetsruaddition$isDeepSleeping()) {
             cir.setReturnValue(Optional.empty());
         }
     }
 }
-

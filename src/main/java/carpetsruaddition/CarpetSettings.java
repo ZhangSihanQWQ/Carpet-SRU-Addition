@@ -4,29 +4,34 @@ import carpet.api.settings.Rule;
 import carpet.api.settings.RuleCategory;
 
 public final class CarpetSettings {
+
     private CarpetSettings() {
     }
 
-    @Rule(categories = {RuleCategory.FEATURE, "allay", "sru"})
+    @Rule(categories = {RuleCategory.FEATURE, "allay", "SRU"})
     public static boolean allaySilentResonanceEnabled = false;
 
-    @Rule(categories = {RuleCategory.FEATURE, "allay", "sru"}, options = {"-1", "16", "60", "120"}, strict = false)
+    @Rule(categories = {RuleCategory.OPTIMIZATION, "allay", "SRU"})
+    public static boolean allayAiFreezeEnabled = false;
+
+    @Rule(categories = {RuleCategory.FEATURE, "allay", "SRU"}, options = {"-1", "20", "60", "120"}, strict = false)
     public static int allayThrowCooldownTicks = -1;
 
-    @Rule(categories = {RuleCategory.FEATURE, "allay", "sru"}, options = {"-1", "0", "4", "16", "32"}, strict = false)
+    @Rule(categories = {RuleCategory.FEATURE, "allay", "SRU"}, options = {"-1", "0", "4", "16", "32"}, strict = false)
     public static int allayMaxHearingDistance = -1;
 
-    @Rule(categories = {RuleCategory.FEATURE, "sru"})
+    @Rule(categories = {RuleCategory.FEATURE, "SRU"})
     public static boolean renewableDragonBreath = false;
 
-    @Rule(categories = {RuleCategory.FEATURE, "sru"})
+    @Rule(categories = {RuleCategory.FEATURE, "SRU"})
     public static boolean mcdrCommandAutoCompletion = false;
 
-    @Rule(categories = {RuleCategory.FEATURE, "sru", "TNT"})
+    @Rule(categories = {RuleCategory.FEATURE, "SRU", "TNT"})
     public static boolean limitTntRandomMomentum = false;
+
+    @Rule(categories = {RuleCategory.FEATURE, "SRU","porting"})
+    public static boolean visibleSpectators = false;
 
     // Internal storage for limited angles (not exposed as a rule)
     public static String limitTntAngles = "";
 }
-
-
