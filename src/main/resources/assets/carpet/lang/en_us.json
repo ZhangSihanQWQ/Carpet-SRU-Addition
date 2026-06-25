@@ -1,5 +1,5 @@
 {
-  "carpet.category.allay": "Allay",
+  "carpet.category.Allay": "Allay",
   "carpet.category.porting": "Porting",
   "carpet.category.SRU": "SRU",
   "carpet.category.TNT": "TNT",
@@ -9,6 +9,8 @@
   "carpet.rule.allayAiFreezeEnabled.desc": "Freezes idle Allay AI when no visible player or liked note block is nearby.",
   "carpet.rule.allayThrowCooldownTicks.name": "Allay Throw Cooldown Ticks",
   "carpet.rule.allayThrowCooldownTicks.desc": "Overrides the allay item pickup cooldown after throwing. Use -1 for vanilla (60 ticks).",
+  "carpet.rule.allayThrowCooldownFix.name": "Allay Throw Cooldown Fix",
+  "carpet.rule.allayThrowCooldownFix.desc": "Prevents items thrown by Allays from being picked up by any Allay for 3 seconds (60 ticks), avoiding pickup loops when throw cooldown is short.",
   "carpet.rule.allayMaxHearingDistance.name": "Allay Max Hearing Distance",
   "carpet.rule.allayMaxHearingDistance.desc": "Overrides the maximum distance at which Allays can hear note blocks. Use -1 for vanilla (16 blocks).",
   "carpet.rule.renewableDragonBreath.name": "Renewable Dragon Breath",

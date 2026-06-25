@@ -8,7 +8,7 @@ Allows Allays to receive note block game events even when the note block is bloc
 
 - Type: `boolean`
 - Default value: `false`
-- Categories: `feature`, `allay`, `sru`
+- Categories: `feature`, `Allay`, `sru`
 
 ## allayAiFreezeEnabled
 
@@ -16,7 +16,7 @@ Allows idle Allays to enter a deep sleep state when no visible player or liked n
 
 - Type: `boolean`
 - Default value: `false`
-- Categories: `optimization`, `allay`, `sru`
+- Categories: `optimization`, `Allay`, `sru`
 
 ## allayThrowCooldownTicks
 
@@ -27,7 +27,15 @@ Set it to `-1` to keep the vanilla behavior, which is 60 ticks.
 - Type: `int`
 - Default value: `-1`
 - Suggested options: `-1`, `16`, `60`, `120`
-- Categories: `feature`, `allay`, `sru`
+- Categories: `feature`, `Allay`, `sru`
+
+## allayThrowCooldownFix
+
+Prevents items thrown by Allays from being picked up by any Allay for 3 seconds (60 ticks), avoiding immediate throw-and-pickup loops when `allayThrowCooldownTicks` is set too low.
+
+- Type: `boolean`
+- Default value: `false`
+- Categories: `SRU`, `Allay`
 
 ## allayMaxHearingDistance
 
@@ -38,7 +46,7 @@ Set it to `-1` to keep the vanilla behavior, which is 16 blocks.
 - Type: `int`
 - Default value: `-1`
 - Suggested options: `-1`, `0`, `4`, `16`, `32`
-- Categories: `feature`, `allay`, `sru`
+- Categories: `feature`, `Allay`, `sru`
 
 ## renewableDragonBreath
 

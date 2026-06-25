@@ -8,7 +8,7 @@
 
 - 类型：`boolean`
 - 默认值：`false`
-- 分类：`feature`、`allay`、`sru`
+- 分类：`feature`、`Allay`、`sru`
 
 ## allayAiFreezeEnabled
 
@@ -16,7 +16,7 @@
 
 - 类型：`boolean`
 - 默认值：`false`
-- 分类：`optimization`、`allay`、`sru`
+- 分类：`optimization`、`Allay`、`sru`
 
 ## allayThrowCooldownTicks
 
@@ -27,7 +27,15 @@
 - 类型：`int`
 - 默认值：`-1`
 - 参考选项：`-1`、`16`、`60`、`120`
-- 分类：`feature`、`allay`、`sru`
+- 分类：`feature`、`Allay`、`sru`
+
+## allayThrowCooldownFix
+
+修复悦灵投掷冷却过短时，刚扔出的物品瞬间又被自己捡起的问题，使悦灵投掷出的物品在 3 秒（60 ticks）内对所有悦灵不可拾取。
+
+- 类型：`boolean`
+- 默认值：`false`
+- 分类：`SRU`、`Allay`
 
 ## allayMaxHearingDistance
 
@@ -38,7 +46,7 @@
 - 类型：`int`
 - 默认值：`-1`
 - 参考选项：`-1`、`0`、`4`、`16`、`32`
-- 分类：`feature`、`allay`、`sru`
+- 分类：`feature`、`Allay`、`sru`
 
 ## renewableDragonBreath
 

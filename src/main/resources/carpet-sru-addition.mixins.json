@@ -5,7 +5,10 @@
 	"mixins": [
 		"allay.ai.AllayEntityMixin",
 		"allay.ai.AllayBrainMixin",
+		"allay.cooldown.AllayEntityMixin",
 		"allay.cooldown.BrainMixin",
+		"allay.cooldown.ItemEntityMixin",
+		"allay.cooldown.NearestItemsSensorMixin",
 		"allay.cooldown.TemptationCooldownTaskMixin",
 		"allay.noteblock.NoteBlockMixin",
 		"allay.range.AllayVibrationCallbackMixin",

@@ -8,16 +8,19 @@ public final class CarpetSettings {
     private CarpetSettings() {
     }
 
-    @Rule(categories = {RuleCategory.FEATURE, "allay", "SRU"})
+    @Rule(categories = {RuleCategory.FEATURE, "Allay", "SRU"})
     public static boolean allaySilentResonanceEnabled = false;
 
-    @Rule(categories = {RuleCategory.OPTIMIZATION, "allay", "SRU"})
+    @Rule(categories = {RuleCategory.OPTIMIZATION, "Allay", "SRU"})
     public static boolean allayAiFreezeEnabled = false;
 
-    @Rule(categories = {RuleCategory.FEATURE, "allay", "SRU"}, options = {"-1", "20", "60", "120"}, strict = false)
+    @Rule(categories = {RuleCategory.FEATURE, "Allay", "SRU"}, options = {"-1", "20", "60", "120"}, strict = false)
     public static int allayThrowCooldownTicks = -1;
 
-    @Rule(categories = {RuleCategory.FEATURE, "allay", "SRU"}, options = {"-1", "0", "4", "16", "32"}, strict = false)
+    @Rule(categories = {"SRU", "Allay"})
+    public static boolean allayThrowCooldownFix = false;
+
+    @Rule(categories = {RuleCategory.FEATURE, "Allay", "SRU"}, options = {"-1", "0", "4", "16", "32"}, strict = false)
     public static int allayMaxHearingDistance = -1;
 
     @Rule(categories = {RuleCategory.FEATURE, "SRU"})

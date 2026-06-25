@@ -1,5 +1,5 @@
 {
-  "carpet-sru-addition.category.allay": "悦灵",
+  "carpet-sru-addition.category.Allay": "悦灵",
   "carpet-sru-addition.category.porting": "移植",
   "carpet-sru-addition.category.SRU": "SRU",
   "carpet-sru-addition.category.TNT": "TNT",
@@ -9,6 +9,8 @@
   "carpet-sru-addition.rule.allayAiFreezeEnabled.desc": "当附近没有可见玩家或绑定音符盒时，冻结空闲悦灵的 AI。",
   "carpet-sru-addition.rule.allayThrowCooldownTicks.name": "悦灵投掷冷却刻数",
   "carpet-sru-addition.rule.allayThrowCooldownTicks.desc": "覆盖悦灵投掷物品后的拾取冷却时间。设为 -1 使用原版逻辑（60 刻）。",
+  "carpet-sru-addition.rule.allayThrowCooldownFix.name": "修改悦灵投掷冷却修复",
+  "carpet-sru-addition.rule.allayThrowCooldownFix.desc": "修复悦灵投掷冷却过短时，刚扔出的物品瞬间又被自己捡起的问题（使投掷出的物品在 3 秒/60 ticks 内对所有悦灵不可拾取）。",
   "carpet-sru-addition.rule.allayMaxHearingDistance.name": "悦灵最大听觉距离",
   "carpet-sru-addition.rule.allayMaxHearingDistance.desc": "覆盖悦灵能听到音符盒的最大距离。设为 -1 使用原版逻辑（16 格）。",
   "carpet-sru-addition.rule.renewableDragonBreath.name": "可再生龙息",

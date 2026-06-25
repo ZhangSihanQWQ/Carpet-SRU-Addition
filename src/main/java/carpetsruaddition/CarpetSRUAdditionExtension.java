@@ -33,7 +33,7 @@ public class CarpetSRUAdditionExtension implements CarpetExtension {
         Map<String, String> translations = new HashMap<>();
         boolean zh = lang != null && lang.toLowerCase().startsWith("zh");
 
-        translations.put("carpet.category.allay", zh ? "悦灵" : "Allay");
+        translations.put("carpet.category.Allay", zh ? "悦灵" : "Allay");
         translations.put("carpet.category.SRU", "SRU");
         translations.put("carpet.category.TNT", "TNT");
         translations.put("carpet.category.porting", zh ? "移植" : "Porting");
@@ -52,6 +52,11 @@ public class CarpetSRUAdditionExtension implements CarpetExtension {
         translations.put("carpet.rule.allayThrowCooldownTicks.desc", zh
             ? "覆盖悦灵投掷物品后的拾取冷却时间。设为 -1 使用原版逻辑（60 ticks）。"
             : "Overrides the allay item pickup cooldown after throwing. Use -1 for vanilla (60 ticks).");
+
+        translations.put("carpet.rule.allayThrowCooldownFix.name", zh ? "修改悦灵投掷冷却修复" : "Allay Throw Cooldown Fix");
+        translations.put("carpet.rule.allayThrowCooldownFix.desc", zh
+            ? "修复悦灵投掷冷却过短时，刚扔出的物品瞬间又被自己捡起的问题（使投掷出的物品在 3 秒/60 ticks 内对所有悦灵不可拾取）。"
+            : "Prevents items thrown by Allays from being picked up by any Allay for 3 seconds (60 ticks), avoiding pickup loops when throw cooldown is short.");
 
         translations.put("carpet.rule.allayMaxHearingDistance.name", zh ? "悦灵最大听觉距离" : "Allay Max Hearing Distance");
         translations.put("carpet.rule.allayMaxHearingDistance.desc", zh
