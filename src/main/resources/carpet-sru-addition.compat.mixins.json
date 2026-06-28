@@ -2,11 +2,8 @@
   "required": false,
   "package": "carpetsruaddition.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [
-    "sru.whereis.WhereisCommandMixin"
-  ],
+  "mixins": [],
   "injectors": {
     "defaultRequire": 1
   }
 }
-
