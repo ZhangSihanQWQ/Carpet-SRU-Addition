@@ -22,9 +22,6 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity {
     @Shadow
     public abstract Entity getCameraEntity();
 
-    @Shadow
-    public abstract boolean isSpectator();
-
     @Inject(method = "updatePotionVisibility", at = @At("HEAD"), cancellable = true)
     private void carpetsruaddition$noInvisibleSpectators(CallbackInfo ci) {
         if (CarpetSettings.visibleSpectators) {

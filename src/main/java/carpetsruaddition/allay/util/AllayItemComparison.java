@@ -15,20 +15,26 @@ public final class AllayItemComparison {
     }
 
     public static boolean customAreItemsEqual(ItemStack stack, ItemStack stack2) {
+
+        //药水
         if (isPotion(stack) && isPotion(stack2)) {
             return stack.getItem() == stack2.getItem();
         }
 
         String id1 = Registries.ITEM.getId(stack.getItem()).getPath();
         String id2 = Registries.ITEM.getId(stack2.getItem()).getPath();
+
+        //旗帜图案
         if (id1.contains("banner_pattern") && id2.contains("banner_pattern")) {
             return true;
         }
 
+        //唱片
         if (stack.contains(DataComponentTypes.JUKEBOX_PLAYABLE) && stack2.contains(DataComponentTypes.JUKEBOX_PLAYABLE)) {
             return true;
         }
 
+        //船/运输船
         boolean isBoat1 = stack.isIn(ItemTags.BOATS);
         boolean isBoat2 = stack2.isIn(ItemTags.BOATS);
         boolean isChestBoat1 = stack.isIn(ItemTags.CHEST_BOATS);
@@ -43,18 +49,37 @@ public final class AllayItemComparison {
             return false;
         }
 
+        //床
         if (stack.isIn(ItemTags.BEDS) && stack2.isIn(ItemTags.BEDS)) {
             return true;
         }
 
+        //马铠
         if (isHorseArmor(id1) && isHorseArmor(id2)) {
             return true;
         }
 
+        //挽具
+        if (isHarness(id1) && isHarness(id2)) {
+            return true;
+        }
+
+        //收纳袋
+        if (isBundle(id1) && isBundle(id2)) {
+            return true;
+        }
+
+        //鹦鹉螺铠
+        if (isNautilusArmor(id1) && isNautilusArmor(id2)) {
+            return true;
+        }
+
+        //陶片
         if (stack.isIn(ItemTags.DECORATED_POT_SHERDS) && stack2.isIn(ItemTags.DECORATED_POT_SHERDS)) {
             return true;
         }
 
+        //锻造模板
         if (stack.getItem() instanceof SmithingTemplateItem && stack2.getItem() instanceof SmithingTemplateItem) {
             return true;
         }
@@ -68,6 +93,18 @@ public final class AllayItemComparison {
 
     private static boolean isHorseArmor(String id) {
         return id.endsWith("_horse_armor");
+    }
+
+    private static boolean isHarness(String id) {
+        return id.endsWith("_harness");
+    }
+
+    private static boolean isBundle(String id) {
+        return id.equals("bundle") || id.endsWith("_bundle");
+    }
+
+    private static boolean isNautilusArmor(String id) {
+        return id.endsWith("_nautilus_armor");
     }
 
     private static boolean areDifferentPotions(ItemStack stack, ItemStack stack2) {

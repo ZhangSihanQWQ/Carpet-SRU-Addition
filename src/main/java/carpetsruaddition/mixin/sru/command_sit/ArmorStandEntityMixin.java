@@ -48,14 +48,6 @@ public abstract class ArmorStandEntityMixin extends LivingEntity implements SitE
         super.removePassenger(passenger);
     }
 
-    @Inject(method = "tick", at = @At("RETURN"))
-    private void carpetsruaddition$tickSitEntity(CallbackInfo ci) {
-        Entity passenger = this.getFirstPassenger();
-        if (this.sru$sitEntity && passenger != null) {
-            this.setYaw(passenger.getHeadYaw());
-        }
-    }
-
     @Inject(method = "writeCustomData", at = @At("RETURN"))
     private void carpetsruaddition$writeSitEntity(WriteView view, CallbackInfo ci) {
         if (this.sru$sitEntity) {
