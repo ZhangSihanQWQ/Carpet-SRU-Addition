@@ -21,6 +21,8 @@
   "carpet-sru-addition.rule.commandHat.desc": "Enables the /hat command. Ported from Vulpeus Carpet, originally from essential addons.",
   "carpet-sru-addition.rule.commandSit.name": "Sit Command",
   "carpet-sru-addition.rule.commandSit.desc": "Enables the /sit command. Ported from Vulpeus Carpet, originally from PCA.",
+  "carpet-sru-addition.rule.commandSet.name": "Set Scale Command",
+  "carpet-sru-addition.rule.commandSet.desc": "Enables /set <scale>, allowing players to change their own size. Range: vanilla minimum 0.0625 to 1.5.",
   "carpet-sru-addition.rule.limitTntRandomMomentum.name": "Limit TNT Random Momentum",
   "carpet-sru-addition.rule.limitTntRandomMomentum.desc": "Limits TNT random momentum using the SRU configured angle list.",
   "carpet-sru-addition.rule.visibleSpectators.name": "Visible Spectators",

@@ -86,6 +86,17 @@ Enables the `/sit` command. Ported from Vulpeus Carpet, originally from PCA.
 - Allowed options: `true`, `false`, `ops`, `0`, `1`, `2`, `3`, `4`
 - Categories: `survival`, `command`, `sru`, `porting`
 
+## commandSet
+
+Enables the `/set <scale>` command, allowing players to change their own size using the vanilla `minecraft:scale` attribute.
+
+The scale range is `0.0625` to `1.5`. 
+
+- Type: `String`
+- Default value: `ops`
+- Allowed options: `true`, `false`, `ops`, `0`, `1`, `2`, `3`, `4`
+- Categories: `survival`, `command`, `sru`
+
 ## limitTntRandomMomentum
 
 Restricts the random horizontal momentum direction generated when TNT is primed.
@@ -119,3 +130,9 @@ Equips one item from your main hand into your head slot. Totems of undying, non-
 ### `/sit`
 
 Makes the executing player sit at their current position.
+
+### `/set <scale>`
+
+Sets the executing player's size. The accepted range is `0.0625` to `1.5`.
+
+Aliases: `/small` = `/set 0.25`, `/smallpro` = `/set 0.0625`, `/big` = `/set 1`, `/bigpro` = `/set 1.5`.

@@ -6,6 +6,7 @@ import carpetsruaddition.command.HatCommand;
 import carpetsruaddition.command.SRURecipeCommand;
 import carpetsruaddition.command.LimitTntRandomMomentumCommand;
 import carpetsruaddition.command.SitCommand;
+import carpetsruaddition.command.SetCommand;
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.command.CommandRegistryAccess;
 import net.minecraft.server.command.ServerCommandSource;
@@ -30,6 +31,7 @@ public class CarpetSRUAdditionExtension implements CarpetExtension {
         LimitTntRandomMomentumCommand.register(dispatcher);
         HatCommand.register(dispatcher);
         SitCommand.register(dispatcher);
+        SetCommand.register(dispatcher);
     }
 
     @Override
@@ -87,6 +89,12 @@ public class CarpetSRUAdditionExtension implements CarpetExtension {
         translations.put("carpet.rule.commandSit.desc", zh
             ? "启用 /sit 命令。移植自 Vulpeus Carpet，原功能来自 PCA。"
             : "Enables the /sit command. Ported from Vulpeus Carpet, originally from PCA.");
+
+
+        translations.put("carpet.rule.commandSet.name", zh ? "缩放命令" : "Set Scale Command");
+        translations.put("carpet.rule.commandSet.desc", zh
+            ? "启用 /set <scale> 命令，允许玩家修改自身大小。范围为原版最小 0.0625 到 1.5。"
+            : "Enables /set <scale>, allowing players to change their own size. Range: vanilla minimum 0.0625 to 1.5.");
 
         translations.put("carpet.rule.limitTntRandomMomentum.name", zh ? "限制TNT随机动量" : "Limit TNT Random Momentum");
         translations.put("carpet.rule.limitTntRandomMomentum.desc", zh

@@ -37,6 +37,10 @@ public final class CarpetSettings {
             options = {"true", "false", "ops", "0", "1", "2", "3", "4"})
     public static String commandSit = "ops";
 
+    @Rule(categories = {RuleCategory.SURVIVAL, RuleCategory.COMMAND, "SRU"},
+            options = {"true", "false", "ops", "0", "1", "2", "3", "4"})
+    public static String commandSet = "ops";
+
     @Rule(categories = {RuleCategory.FEATURE, "SRU", "TNT"})
     public static boolean limitTntRandomMomentum = false;
 

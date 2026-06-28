@@ -86,6 +86,17 @@
 - 可用选项：`true`、`false`、`ops`、`0`、`1`、`2`、`3`、`4`
 - 分类：`survival`、`command`、`sru`、`porting`
 
+## commandSet
+
+启用 `/set <scale>` 命令，使用原版 `minecraft:scale` 属性修改执行命令玩家自身的大小。
+
+大小范围为 `0.0625` 到 `1.5`。
+
+- 类型：`String`
+- 默认值：`ops`
+- 可用选项：`true`、`false`、`ops`、`0`、`1`、`2`、`3`、`4`
+- 分类：`survival`、`command`、`sru`
+
 ## limitTntRandomMomentum
 
 限制 TNT 被点燃时生成的随机水平动量方向。
@@ -119,3 +130,9 @@
 ### `/sit`
 
 让执行命令的玩家在当前位置坐下。
+
+### `/set <scale>`
+
+设置执行命令玩家自身的大小。允许范围为 `0.0625` 到 `1.5`。
+
+别名：`/small` = `/set 0.25`，`/smallpro` = `/set 0.0625`，`/big` = `/set 1`，`/bigpro` = `/set 1.5`。

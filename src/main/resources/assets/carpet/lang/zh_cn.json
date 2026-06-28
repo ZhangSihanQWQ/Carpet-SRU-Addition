@@ -21,6 +21,8 @@
   "carpet.rule.commandHat.desc": "启用 /hat 命令。移植自 Vulpeus Carpet，原功能来自 essential addons。",
   "carpet.rule.commandSit.name": "坐下命令",
   "carpet.rule.commandSit.desc": "启用 /sit 命令。移植自 Vulpeus Carpet，原功能来自 PCA。",
+  "carpet.rule.commandSet.name": "缩放命令",
+  "carpet.rule.commandSet.desc": "启用 /set <scale> 命令，允许玩家修改自身大小。范围为原版最小 0.0625 到 1.5。",
   "carpet.rule.limitTntRandomMomentum.name": "限制 TNT 随机动量",
   "carpet.rule.limitTntRandomMomentum.desc": "使用 SRU 配置的角度列表限制 TNT 随机动量。",
   "carpet.rule.visibleSpectators.name": "可见旁观者",
