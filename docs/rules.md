@@ -58,13 +58,15 @@ When enabled, interacting with a dragon egg while holding dragon breath creates 
 - Default value: `false`
 - Categories: `feature`, `sru`
 
-## mcdrCommandAutoCompletion
+## freezingTickNoStarve
 
-Enables Tab completion for chat messages that start with `!!`, covering common MCDR and Prime Backup commands.
+Prevents Carpet fake players from taking starvation damage while game ticks are frozen with `/tick freeze`.
+
+This only cancels starvation damage for Carpet fake players during tick freeze; real players and other damage types are unaffected.
 
 - Type: `boolean`
 - Default value: `false`
-- Categories: `feature`, `sru`
+- Categories: `bugfix`, `sru`
 
 ## commandHat
 

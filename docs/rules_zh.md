@@ -58,13 +58,15 @@
 - 默认值：`false`
 - 分类：`feature`、`sru`
 
-## mcdrCommandAutoCompletion
+## freezingTickNoStarve
 
-为聊天框中以 `!!` 开头的常见 MCDR 和 Prime Backup 命令启用 Tab 补全。
+当使用 `/tick freeze` 冻结游戏刻时，阻止 Carpet 假人受到饥饿伤害。
+
+该规则只会在冻结游戏刻时取消 Carpet 假人的饥饿伤害；真人玩家和其它伤害类型不受影响。
 
 - 类型：`boolean`
 - 默认值：`false`
-- 分类：`feature`、`sru`
+- 分类：`bugfix`、`sru`
 
 ## commandHat
 

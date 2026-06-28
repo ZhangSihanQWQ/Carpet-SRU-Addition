@@ -18,12 +18,11 @@
 		"sru.dragonbreath.AreaEffectCloudEntityMixin",
 		"sru.dragonbreath.DragonEggBlockMixin",
 		"sru.dragonbreath.GlassBottleItemMixin",
+		"sru.freezing_tick_no_starve.ServerPlayerEntityMixin",
 		"sru.recipe.RecipeManagerMixin",
 		"sru.tnt.TntEntityMixin"
 	],
-	"client": [
-		"client.chat.ChatScreenMixin"
-	],
+	"client": [],
 	"injectors": {
 		"defaultRequire": 1
 	},

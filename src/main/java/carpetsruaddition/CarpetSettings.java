@@ -26,8 +26,8 @@ public final class CarpetSettings {
     @Rule(categories = {RuleCategory.FEATURE, "SRU"})
     public static boolean renewableDragonBreath = false;
 
-    @Rule(categories = {RuleCategory.FEATURE, "SRU"})
-    public static boolean mcdrCommandAutoCompletion = false;
+    @Rule(categories = {RuleCategory.BUGFIX, "SRU"})
+    public static boolean freezingTickNoStarve = false;
 
     @Rule(categories = {RuleCategory.SURVIVAL, RuleCategory.COMMAND, "SRU", "porting"},
             options = {"true", "false", "ops", "0", "1", "2", "3", "4"})

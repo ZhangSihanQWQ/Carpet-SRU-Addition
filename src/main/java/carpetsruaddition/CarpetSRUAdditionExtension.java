@@ -72,10 +72,11 @@ public class CarpetSRUAdditionExtension implements CarpetExtension {
             ? "开启后，可通过龙蛋与龙息瓶交互重新生成可收集的龙息云。"
             : "If enabled, dragon breath clouds become renewable via dragon egg interaction.");
 
-        translations.put("carpet.rule.mcdrCommandAutoCompletion.name", zh ? "MCDR 命令自动补全" : "MCDR Command Auto Completion");
-        translations.put("carpet.rule.mcdrCommandAutoCompletion.desc", zh
-            ? "开启后，聊天框中以 !! 开头的 MCDR / Prime Backup 指令也能使用 Tab 自动补全。"
-            : "If enabled, !!-prefixed MCDR / Prime Backup commands can use Tab completion in the chat box.");
+
+        translations.put("carpet.rule.freezingTickNoStarve.name", zh ? "冻结刻假人免饥饿伤害" : "Freezing Tick No Starve");
+        translations.put("carpet.rule.freezingTickNoStarve.desc", zh
+            ? "开启后，/tick freeze 冻结游戏刻时 Carpet 假人不会受到饥饿伤害。"
+            : "Prevents Carpet fake players from taking starvation damage while game ticks are frozen.");
 
         translations.put("carpet.rule.commandHat.name", zh ? "帽子命令" : "Hat Command");
         translations.put("carpet.rule.commandHat.desc", zh

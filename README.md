@@ -4,7 +4,7 @@
 
 Carpet SRU Addition is a [Carpet](https://github.com/gnembon/fabric-carpet) extension for Minecraft 1.21.11.
 
-It contains a small set of server-side utility rules used by SRU survival servers, including Allay behavior tweaks, renewable dragon breath, TNT random momentum control, spectator visibility changes, recipe toggles, and MCDR command completion.
+It contains a small set of server-side utility rules used by SRU survival servers, including Allay behavior tweaks, renewable dragon breath, TNT random momentum control, spectator visibility changes, and recipe toggles.
 
 ## Documentation
 
