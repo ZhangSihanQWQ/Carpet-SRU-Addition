@@ -20,4 +20,4 @@ Carpet SRU Addition 是一个适用于 Minecraft 1.21.11 的 [Carpet](https://gi
 - 
 ## 许可证
 
-本项目使用 CC0 许可证。
+本项目使用 MIT 许可证。
