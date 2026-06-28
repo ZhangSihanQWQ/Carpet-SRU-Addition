@@ -24,9 +24,11 @@ public final class SetCommand {
                 .then(CommandManager.argument("scale", DoubleArgumentType.doubleArg(MIN_SCALE, MAX_SCALE))
                         .executes(context -> setScale(context.getSource(), DoubleArgumentType.getDouble(context, "scale")))));
         registerAlias(dispatcher, "small", 0.5D);
-        registerAlias(dispatcher, "smallpro", MIN_SCALE);
+        registerAlias(dispatcher, "smallpro", 0.1D);
+        registerAlias(dispatcher, "smallpromax", MIN_SCALE);
         registerAlias(dispatcher, "big", 1.0D);
-        registerAlias(dispatcher, "bigpro", MAX_SCALE);
+        registerAlias(dispatcher, "bigpro", 1.2D);
+        registerAlias(dispatcher, "bigpromax", MAX_SCALE);
     }
 
     private static void registerAlias(CommandDispatcher<ServerCommandSource> dispatcher, String name, double scale) {

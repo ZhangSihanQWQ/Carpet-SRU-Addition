@@ -135,4 +135,6 @@ Makes the executing player sit at their current position.
 
 Sets the executing player's size. The accepted range is `0.0625` to `1.5`.
 
-Aliases: `/small` = `/set 0.5`, `/smallpro` = `/set 0.0625`, `/big` = `/set 1`, `/bigpro` = `/set 1.5`.
+### Aliases: 
+`/small` = `/set 0.5`,`/smallpro` = `/set 0.1`,`/smallpromax` = `/set 0.0625`,  
+`/big` = `/set 1`,`/bigpro` = `/set 1.2`,`/bigpromax` = `/set 1.5`.

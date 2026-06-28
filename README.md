@@ -20,4 +20,4 @@ It contains a small set of server-side utility rules used by SRU survival server
 
 ## License
 
-This project is available under the CC0 license.
+This project is available under the MIT license.
