@@ -1,7 +1,7 @@
 package carpetsruaddition.mixin.allay.cooldown;
 
 import carpetsruaddition.CarpetSettings;
-import carpetsruaddition.allay.access.AllayThrowCooldownAccess;
+import carpetsruaddition.allay.access.ISruItemEntity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.ai.brain.sensor.NearestItemsSensor;
 import net.minecraft.entity.mob.MobEntity;
@@ -18,8 +18,8 @@ public abstract class NearestItemsSensorMixin {
     private static void carpetsruaddition$hideAllayThrownItems(MobEntity mob, ServerWorld world, ItemEntity itemEntity, CallbackInfoReturnable<Boolean> cir) {
         if (CarpetSettings.allayThrowCooldownFix
                 && mob instanceof AllayEntity
-                && itemEntity instanceof AllayThrowCooldownAccess access
-                && access.carpetsruaddition$getAllayThrowCooldownTicks() > 0) {
+                && itemEntity instanceof ISruItemEntity access
+                && access.sru$getAllayCooldown() > 0) {
             cir.setReturnValue(false);
         }
     }

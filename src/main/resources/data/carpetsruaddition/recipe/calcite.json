@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "C": {
-      "item": "minecraft:cobblestone"
-    },
-    "B": {
-      "item": "minecraft:bone_meal"
-    }
+    "C": "minecraft:cobblestone",
+    "B": "minecraft:bone_meal"
   },
   "pattern": [
     "CB",

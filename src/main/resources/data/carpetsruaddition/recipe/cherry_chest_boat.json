@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:cherry_planks"
-    },
-    "C": {
-      "item": "minecraft:chest"
-    }
+    "#": "minecraft:cherry_planks",
+    "C": "minecraft:chest"
   },
   "pattern": [
     "#C#",
@@ -18,4 +14,3 @@
     "id": "minecraft:cherry_chest_boat"
   }
 }
-

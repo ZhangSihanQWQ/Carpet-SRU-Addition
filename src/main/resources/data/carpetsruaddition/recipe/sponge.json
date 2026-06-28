@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "G": {
-      "item": "minecraft:yellow_wool"
-    },
-    "B": {
-      "item": "minecraft:sponge"
-    }
+    "G": "minecraft:yellow_wool",
+    "B": "minecraft:sponge"
   },
   "pattern": [
     "GGG",

@@ -1,0 +1,8 @@
+$tellraw @s [{"text":"===== 近31个签到日 =====","color":"gold"}]
+$tellraw @s [{"text":"01=30天前，31=今天；绿=已签，灰=未签","color":"yellow"}]
+$tellraw @s [{"text":"01 ","color":"$(c01)"},{"text":"02 ","color":"$(c02)"},{"text":"03 ","color":"$(c03)"},{"text":"04 ","color":"$(c04)"},{"text":"05 ","color":"$(c05)"},{"text":"06 ","color":"$(c06)"},{"text":"07 ","color":"$(c07)"}]
+$tellraw @s [{"text":"08 ","color":"$(c08)"},{"text":"09 ","color":"$(c09)"},{"text":"10 ","color":"$(c10)"},{"text":"11 ","color":"$(c11)"},{"text":"12 ","color":"$(c12)"},{"text":"13 ","color":"$(c13)"},{"text":"14 ","color":"$(c14)"}]
+$tellraw @s [{"text":"15 ","color":"$(c15)"},{"text":"16 ","color":"$(c16)"},{"text":"17 ","color":"$(c17)"},{"text":"18 ","color":"$(c18)"},{"text":"19 ","color":"$(c19)"},{"text":"20 ","color":"$(c20)"},{"text":"21 ","color":"$(c21)"}]
+$tellraw @s [{"text":"22 ","color":"$(c22)"},{"text":"23 ","color":"$(c23)"},{"text":"24 ","color":"$(c24)"},{"text":"25 ","color":"$(c25)"},{"text":"26 ","color":"$(c26)"},{"text":"27 ","color":"$(c27)"},{"text":"28 ","color":"$(c28)"}]
+$tellraw @s [{"text":"29 ","color":"$(c29)"},{"text":"30 ","color":"$(c30)"},{"text":"31 ","color":"$(c31)"}]
+$tellraw @s [{"text":"累计签到天数：","color":"green"},{"score":{"name":"@s","objective":"sru_ci_total"},"color":"aqua"}]

@@ -1,0 +1,34 @@
+execute unless entity @s[tag=sru_ci.admin] run tellraw @s {"text":"你没有补签权限，需要 sru_ci.admin 标签。","color":"red"}
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 0 run function sru_checkin:history/resign/00
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 1 run function sru_checkin:history/resign/01
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 2 run function sru_checkin:history/resign/02
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 3 run function sru_checkin:history/resign/03
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 4 run function sru_checkin:history/resign/04
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 5 run function sru_checkin:history/resign/05
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 6 run function sru_checkin:history/resign/06
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 7 run function sru_checkin:history/resign/07
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 8 run function sru_checkin:history/resign/08
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 9 run function sru_checkin:history/resign/09
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 10 run function sru_checkin:history/resign/10
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 11 run function sru_checkin:history/resign/11
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 12 run function sru_checkin:history/resign/12
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 13 run function sru_checkin:history/resign/13
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 14 run function sru_checkin:history/resign/14
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 15 run function sru_checkin:history/resign/15
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 16 run function sru_checkin:history/resign/16
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 17 run function sru_checkin:history/resign/17
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 18 run function sru_checkin:history/resign/18
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 19 run function sru_checkin:history/resign/19
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 20 run function sru_checkin:history/resign/20
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 21 run function sru_checkin:history/resign/21
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 22 run function sru_checkin:history/resign/22
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 23 run function sru_checkin:history/resign/23
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 24 run function sru_checkin:history/resign/24
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 25 run function sru_checkin:history/resign/25
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 26 run function sru_checkin:history/resign/26
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 27 run function sru_checkin:history/resign/27
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 28 run function sru_checkin:history/resign/28
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 29 run function sru_checkin:history/resign/29
+execute if entity @s[tag=sru_ci.admin] if score @s sru_ci_resign matches 30 run function sru_checkin:history/resign/30
+scoreboard players reset @s sru_ci_resign
+scoreboard players enable @s sru_ci_resign

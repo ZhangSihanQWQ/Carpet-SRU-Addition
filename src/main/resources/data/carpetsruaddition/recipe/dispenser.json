@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "R": {
-      "item": "minecraft:string"
-    },
-    "X": {
-      "item": "minecraft:dropper"
-    }
+    "#": "minecraft:stick",
+    "R": "minecraft:string",
+    "X": "minecraft:dropper"
   },
   "pattern": [
     " #R",

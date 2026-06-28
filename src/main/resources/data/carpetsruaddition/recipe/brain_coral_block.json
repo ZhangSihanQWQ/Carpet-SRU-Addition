@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "F": {
-      "item": "minecraft:brain_coral_fan"
-    }
+    "F": "minecraft:brain_coral_fan"
   },
   "pattern": [
     "FF",

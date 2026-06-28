@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:oak_planks"
-    },
-    "C": {
-      "item": "minecraft:chest"
-    }
+    "#": "minecraft:oak_planks",
+    "C": "minecraft:chest"
   },
   "pattern": [
     "#C#",
@@ -18,4 +14,3 @@
     "id": "minecraft:oak_chest_boat"
   }
 }
-

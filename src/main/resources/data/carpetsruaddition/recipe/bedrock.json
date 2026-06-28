@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "F": {
-      "item": "minecraft:obsidian"
-    },
-    "X": {
-      "item": "minecraft:nether_star"
-    },
-    "#": {
-      "item": "minecraft:bedrock"
-    }
+    "F": "minecraft:obsidian",
+    "X": "minecraft:nether_star",
+    "#": "minecraft:bedrock"
   },
   "pattern": [
     "XFX",

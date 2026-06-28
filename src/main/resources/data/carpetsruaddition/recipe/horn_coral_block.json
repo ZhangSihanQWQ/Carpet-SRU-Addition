@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "F": {
-      "item": "minecraft:horn_coral_fan"
-    }
+    "F": "minecraft:horn_coral_fan"
   },
   "pattern": [
     "FF",

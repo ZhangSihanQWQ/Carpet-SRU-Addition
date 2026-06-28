@@ -26,7 +26,7 @@
 
 - 类型：`int`
 - 默认值：`-1`
-- 参考选项：`-1`、`16`、`60`、`120`
+- 参考选项：`-1`、`20`、`60`、`120`
 - 分类：`feature`、`Allay`、`sru`
 
 ## allayThrowCooldownFix
@@ -35,7 +35,7 @@
 
 - 类型：`boolean`
 - 默认值：`false`
-- 分类：`SRU`、`Allay`
+- 分类：`feature`、`Allay`、`sru`
 
 ## allayMaxHearingDistance
 

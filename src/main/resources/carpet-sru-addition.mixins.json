@@ -9,6 +9,7 @@
 		"allay.cooldown.BrainMixin",
 		"allay.cooldown.ItemEntityMixin",
 		"allay.cooldown.NearestItemsSensorMixin",
+		"allay.cooldown.TargetUtilMixin",
 		"allay.cooldown.TemptationCooldownTaskMixin",
 		"allay.noteblock.NoteBlockMixin",
 		"allay.range.AllayVibrationCallbackMixin",

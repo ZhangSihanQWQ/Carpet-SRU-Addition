@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:birch_planks"
-    },
-    "C": {
-      "item": "minecraft:chest"
-    }
+    "#": "minecraft:birch_planks",
+    "C": "minecraft:chest"
   },
   "pattern": [
     "#C#",

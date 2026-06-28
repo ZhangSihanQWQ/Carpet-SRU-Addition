@@ -26,7 +26,7 @@ Set it to `-1` to keep the vanilla behavior, which is 60 ticks.
 
 - Type: `int`
 - Default value: `-1`
-- Suggested options: `-1`, `16`, `60`, `120`
+- Suggested options: `-1`, `20`, `60`, `120`
 - Categories: `feature`, `Allay`, `sru`
 
 ## allayThrowCooldownFix
@@ -35,7 +35,7 @@ Prevents items thrown by Allays from being picked up by any Allay for 3 seconds 
 
 - Type: `boolean`
 - Default value: `false`
-- Categories: `SRU`, `Allay`
+- Categories: `feature`, `Allay`, `sru`
 
 ## allayMaxHearingDistance
 
