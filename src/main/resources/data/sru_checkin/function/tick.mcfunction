@@ -14,12 +14,12 @@ execute as @a[scores={sru_ci_today=0,sru_ci_ticks=6000..}] run function sru_chec
 execute as @a[scores={sru_ci_today=0}] run function sru_checkin:check_dist
 execute as @a[scores={sru_ci_today=1..}] run scoreboard players set @s sru_ci_hist_00 1
 
-# 玩家可用指令入口：/trigger sru_ci_show、/trigger sru_ci_resign、/trigger sru_ci_set_total
+# 玩家可用指令入口：/trigger sru_ci_show、/trigger sru_ci_resign、/trigger sru_ci_set_total。trigger 默认 0 不能作为有效参数。
 scoreboard players enable @a sru_ci_show
 scoreboard players enable @a sru_ci_resign
 scoreboard players enable @a sru_ci_set_total
 execute as @a[scores={sru_ci_show=1..}] run function sru_checkin:command/show
-execute as @a[scores={sru_ci_resign=0..30}] run function sru_checkin:command/resign
-execute as @a[scores={sru_ci_resign=31..}] run function sru_checkin:command/resign_invalid
-execute as @a[scores={sru_ci_set_total=0..}] run function sru_checkin:command/set_total
+execute as @a[scores={sru_ci_resign=1..31}] run function sru_checkin:command/resign
+execute as @a[scores={sru_ci_resign=32..}] run function sru_checkin:command/resign_invalid
+execute as @a[scores={sru_ci_set_total=1..}] run function sru_checkin:command/set_total
 execute as @a[scores={sru_ci_set_total=..-1}] run function sru_checkin:command/set_total_invalid
