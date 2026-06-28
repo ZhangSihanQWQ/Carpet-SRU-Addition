@@ -66,6 +66,24 @@ Enables Tab completion for chat messages that start with `!!`, covering common M
 - Default value: `false`
 - Categories: `feature`, `sru`
 
+## commandHat
+
+Enables the `/hat` command. Ported from Vulpeus Carpet, originally from essential addons.
+
+- Type: `String`
+- Default value: `ops`
+- Allowed options: `true`, `false`, `ops`, `0`, `1`, `2`, `3`, `4`
+- Categories: `survival`, `command`, `sru`, `porting`
+
+## commandSit
+
+Enables the `/sit` command. Ported from Vulpeus Carpet, originally from PCA.
+
+- Type: `String`
+- Default value: `ops`
+- Allowed options: `true`, `false`, `ops`, `0`, `1`, `2`, `3`, `4`
+- Categories: `survival`, `command`, `sru`, `porting`
+
 ## limitTntRandomMomentum
 
 Restricts the random horizontal momentum direction generated when TNT is primed.
@@ -78,7 +96,9 @@ Use `/limitTntRandomMomentum add <angle>` to add a restricted base angle, where 
 
 ## visibleSpectators
 
-Allows survival, creative, and adventure mode players to see players in spectator mode. Spectators are rendered as fully opaque player heads instead of translucent floating heads.
+Allows survival, creative, and adventure mode players to see players in spectator mode.
+
+Ported from Vulpeus Carpet's `visibleSpectators` rule, which was originally ported from totos carpet tweaks.
 
 - Type: `boolean`
 - Default value: `false`
@@ -89,3 +109,11 @@ Allows survival, creative, and adventure mode players to see players in spectato
 ### `/srurecipe enable`
 
 Enables some ~~not vanilla~~ recipes provided by this mod.
+
+### `/hat`
+
+Equips one item from your main hand into your head slot. Totems of undying, non-empty shulker boxes, and replacing an item with Curse of Binding are blocked.
+
+### `/sit`
+
+Makes the executing player sit at their current position.

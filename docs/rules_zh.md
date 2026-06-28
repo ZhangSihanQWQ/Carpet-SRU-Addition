@@ -12,7 +12,7 @@
 
 ## allayAiFreezeEnabled
 
-允许空闲悦灵在附近没有可见玩家且没有绑定音符盒时进入深度睡眠状态，减少 AI 活动，直到需要再次响应。
+允许空闲悦灵在附近没有可见玩家且没有绑定音符盒时进入睡眠状态，减少 AI 活动，直到需要再次响应。
 
 - 类型：`boolean`
 - 默认值：`false`
@@ -66,6 +66,24 @@
 - 默认值：`false`
 - 分类：`feature`、`sru`
 
+## commandHat
+
+启用 `/hat` 命令。移植自 Vulpeus Carpet，原功能来自 essential addons。
+
+- 类型：`String`
+- 默认值：`ops`
+- 可用选项：`true`、`false`、`ops`、`0`、`1`、`2`、`3`、`4`
+- 分类：`survival`、`command`、`sru`、`porting`
+
+## commandSit
+
+启用 `/sit` 命令。移植自 Vulpeus Carpet，原功能来自 PCA。
+
+- 类型：`String`
+- 默认值：`ops`
+- 可用选项：`true`、`false`、`ops`、`0`、`1`、`2`、`3`、`4`
+- 分类：`survival`、`command`、`sru`、`porting`
+
 ## limitTntRandomMomentum
 
 限制 TNT 被点燃时生成的随机水平动量方向。
@@ -78,7 +96,9 @@
 
 ## visibleSpectators
 
-允许生存、创造和冒险模式的玩家看到旁观者模式下的玩家，且旁观者显示为完全不透明的玩家头颅，而不是半透明浮空头颅。
+允许生存、创造和冒险模式的玩家看到旁观者模式下的玩家。。
+
+该规则移植自 Vulpeus Carpet 的 `visibleSpectators` 规则，原规则来自 totos carpet tweaks。
 
 - 类型：`boolean`
 - 默认值：`false`
@@ -89,3 +109,11 @@
 ### `/srurecipe enable`
 
 启用本模组提供的~~not vanilla~~的配方。
+
+### `/hat`
+
+将主手中的 1 个物品装备到头部槽位。不允许装备不死图腾、非空潜影盒，也不能替换带有绑定诅咒的头部装备。
+
+### `/sit`
+
+让执行命令的玩家在当前位置坐下。

@@ -17,7 +17,7 @@ public final class CarpetSettings {
     @Rule(categories = {RuleCategory.FEATURE, "Allay", "SRU"}, options = {"-1", "20", "60", "120"}, strict = false)
     public static int allayThrowCooldownTicks = -1;
 
-    @Rule(categories = {"SRU", "Allay"})
+    @Rule(categories = {RuleCategory.FEATURE, "Allay", "SRU"})
     public static boolean allayThrowCooldownFix = false;
 
     @Rule(categories = {RuleCategory.FEATURE, "Allay", "SRU"}, options = {"-1", "0", "4", "16", "32"}, strict = false)
@@ -28,6 +28,14 @@ public final class CarpetSettings {
 
     @Rule(categories = {RuleCategory.FEATURE, "SRU"})
     public static boolean mcdrCommandAutoCompletion = false;
+
+    @Rule(categories = {RuleCategory.SURVIVAL, RuleCategory.COMMAND, "SRU", "porting"},
+            options = {"true", "false", "ops", "0", "1", "2", "3", "4"})
+    public static String commandHat = "ops";
+
+    @Rule(categories = {RuleCategory.SURVIVAL, RuleCategory.COMMAND, "SRU", "porting"},
+            options = {"true", "false", "ops", "0", "1", "2", "3", "4"})
+    public static String commandSit = "ops";
 
     @Rule(categories = {RuleCategory.FEATURE, "SRU", "TNT"})
     public static boolean limitTntRandomMomentum = false;

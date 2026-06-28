@@ -2,8 +2,10 @@ package carpetsruaddition;
 
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
+import carpetsruaddition.command.HatCommand;
 import carpetsruaddition.command.SRURecipeCommand;
 import carpetsruaddition.command.LimitTntRandomMomentumCommand;
+import carpetsruaddition.command.SitCommand;
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.command.CommandRegistryAccess;
 import net.minecraft.server.command.ServerCommandSource;
@@ -26,6 +28,8 @@ public class CarpetSRUAdditionExtension implements CarpetExtension {
     public void registerCommands(CommandDispatcher<ServerCommandSource> dispatcher, CommandRegistryAccess commandBuildContext) {
         SRURecipeCommand.register(dispatcher);
         LimitTntRandomMomentumCommand.register(dispatcher);
+        HatCommand.register(dispatcher);
+        SitCommand.register(dispatcher);
     }
 
     @Override
@@ -72,6 +76,16 @@ public class CarpetSRUAdditionExtension implements CarpetExtension {
         translations.put("carpet.rule.mcdrCommandAutoCompletion.desc", zh
             ? "开启后，聊天框中以 !! 开头的 MCDR / Prime Backup 指令也能使用 Tab 自动补全。"
             : "If enabled, !!-prefixed MCDR / Prime Backup commands can use Tab completion in the chat box.");
+
+        translations.put("carpet.rule.commandHat.name", zh ? "帽子命令" : "Hat Command");
+        translations.put("carpet.rule.commandHat.desc", zh
+            ? "启用 /hat 命令。移植自 Vulpeus Carpet，原功能来自 essential addons。"
+            : "Enables the /hat command. Ported from Vulpeus Carpet, originally from essential addons.");
+
+        translations.put("carpet.rule.commandSit.name", zh ? "坐下命令" : "Sit Command");
+        translations.put("carpet.rule.commandSit.desc", zh
+            ? "启用 /sit 命令。移植自 Vulpeus Carpet，原功能来自 PCA。"
+            : "Enables the /sit command. Ported from Vulpeus Carpet, originally from PCA.");
 
         translations.put("carpet.rule.limitTntRandomMomentum.name", zh ? "限制TNT随机动量" : "Limit TNT Random Momentum");
         translations.put("carpet.rule.limitTntRandomMomentum.desc", zh
