@@ -23,7 +23,7 @@ public final class SetCommand {
                 .requires(source -> CommandHelper.canUseCommand(source, CarpetSettings.commandSet))
                 .then(CommandManager.argument("scale", DoubleArgumentType.doubleArg(MIN_SCALE, MAX_SCALE))
                         .executes(context -> setScale(context.getSource(), DoubleArgumentType.getDouble(context, "scale")))));
-        registerAlias(dispatcher, "small", 0.25D);
+        registerAlias(dispatcher, "small", 0.5D);
         registerAlias(dispatcher, "smallpro", MIN_SCALE);
         registerAlias(dispatcher, "big", 1.0D);
         registerAlias(dispatcher, "bigpro", MAX_SCALE);

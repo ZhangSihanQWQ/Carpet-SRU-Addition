@@ -135,4 +135,4 @@
 
 设置执行命令玩家自身的大小。允许范围为 `0.0625` 到 `1.5`。
 
-别名：`/small` = `/set 0.25`，`/smallpro` = `/set 0.0625`，`/big` = `/set 1`，`/bigpro` = `/set 1.5`。
+别名：`/small` = `/set 0.5`，`/smallpro` = `/set 0.0625`，`/big` = `/set 1`，`/bigpro` = `/set 1.5`。
