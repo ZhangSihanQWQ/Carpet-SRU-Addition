@@ -99,15 +99,43 @@ public final class CrashReportCarpetRules {
             declaringClass = parsedRule.field.getDeclaringClass();
         }
 
+        String managerModId = modIdFromRuleManager(rule);
+        if (managerModId == null) {
+            managerModId = modIdFromManager(manager);
+        }
+        if (managerModId != null && !"carpet".equals(managerModId)) {
+            return displayModName(managerModId);
+        }
+
         String modId = modIdFromClassPath(declaringClass);
         if (modId == null) {
             modId = modIdFromDeclaringClass(declaringClass);
         }
         if (modId == null) {
-            modId = manager.identifier();
+            modId = managerModId;
+        }
+        return displayModName(modId);
+    }
+
+    private static String modIdFromRuleManager(CarpetRule<?> rule) {
+        try {
+            return modIdFromManager(rule.settingsManager());
+        } catch (Throwable throwable) {
+            return null;
+        }
+    }
+
+    private static String modIdFromManager(SettingsManager manager) {
+        if (manager == null) {
+            return null;
         }
 
-        return displayModName(modId);
+        try {
+            String identifier = manager.identifier();
+            return identifier == null || identifier.isBlank() ? null : identifier;
+        } catch (Throwable throwable) {
+            return null;
+        }
     }
 
     private static String modIdFromClassPath(Class<?> declaringClass) {
