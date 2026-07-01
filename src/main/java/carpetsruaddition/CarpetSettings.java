@@ -47,6 +47,9 @@ public final class CarpetSettings {
     @Rule(categories = {RuleCategory.FEATURE, "SRU","porting"})
     public static boolean visibleSpectators = false;
 
+    @Rule(categories = {RuleCategory.FEATURE, "SRU"}, options = {"false", "plants", "all"})
+    public static String superBoneMeal = "false";
+
     // Internal storage for limited angles (not exposed as a rule)
     public static String limitTntAngles = "";
 }

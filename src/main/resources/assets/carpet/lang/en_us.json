@@ -26,5 +26,7 @@
   "carpet.rule.limitTntRandomMomentum.name": "Limit TNT Random Momentum",
   "carpet.rule.limitTntRandomMomentum.desc": "Limits TNT random momentum using the SRU configured angle list.",
   "carpet.rule.visibleSpectators.name": "Visible Spectators",
-  "carpet.rule.visibleSpectators.desc": "Makes spectators visible for SRU server gameplay compatibility."
+  "carpet.rule.visibleSpectators.desc": "Makes spectators visible for SRU server gameplay compatibility.",
+  "carpet.rule.superBoneMeal.name": "Super Bone Meal",
+  "carpet.rule.superBoneMeal.desc": "Allows bone meal to advance extra growable blocks by one growth step. plants affects plant-like blocks only; all also affects non-plant growable blocks such as budding amethyst and pointed dripstone."
 }

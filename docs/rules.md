@@ -117,6 +117,17 @@ Ported from Vulpeus Carpet's `visibleSpectators` rule, which was originally port
 - Default value: `false`
 - Categories: `feature`, `porting`
 
+## superBoneMeal
+
+Allows bone meal to advance additional growable blocks by one growth step.
+
+The `plants` option affects plant-like growable blocks that are not normally covered by bone meal, such as nether wart, sugar cane, cactus, and chorus flowers. The `all` option also affects non-plant growable blocks such as budding amethyst and pointed dripstone. Animals and other entities are not affected.
+
+- Type: `String`
+- Default value: `false`
+- Allowed options: `false`, `plants`, `all`
+- Categories: `feature`, `sru`
+
 ## Additional Commands
 
 ### `/srurecipe enable`
