@@ -8,21 +8,27 @@ import carpet.settings.ParsedRule;
 import carpetsruaddition.CarpetSettings;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
+import net.minecraft.util.crash.CrashReport;
+import net.minecraft.util.crash.CrashReportSection;
 
 import java.lang.reflect.Field;
 import java.nio.file.Path;
 import java.security.CodeSource;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.WeakHashMap;
 
 public final class CrashReportCarpetRules {
     private static final String UNKNOWN_SOURCE = "unknown";
     private static final String KEY_SEPARATOR = "\u0000";
     private static final Map<String, String> REGISTERED_RULE_SOURCES = new ConcurrentHashMap<>();
     private static final Map<String, String> REGISTERED_RULE_NAME_SOURCES = new ConcurrentHashMap<>();
+    private static final Set<CrashReport> REPORTS_WITH_SECTION = Collections.newSetFromMap(new WeakHashMap<>());
     private static volatile String cachedReport = "No modified Carpet rules.";
 
     private CrashReportCarpetRules() {
@@ -73,6 +79,24 @@ public final class CrashReportCarpetRules {
             return CarpetSettings.crashReportCarpetRules;
         } catch (Throwable throwable) {
             return cachedReport.contains("crashReportCarpetRules = true");
+        }
+    }
+
+    public static void addCrashReportSection(CrashReport report) {
+        if (report == null || !isRuleEnabled()) {
+            return;
+        }
+
+        synchronized (REPORTS_WITH_SECTION) {
+            if (!REPORTS_WITH_SECTION.add(report)) {
+                return;
+            }
+        }
+
+        try {
+            CrashReportSection section = report.addElement("Carpet Rules");
+            section.add("Modified rules", reportForCrash());
+        } catch (Throwable ignored) {
         }
     }
 
