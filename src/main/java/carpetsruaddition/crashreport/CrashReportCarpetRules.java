@@ -5,6 +5,7 @@ import carpet.api.settings.CarpetRule;
 import carpet.api.settings.RuleHelper;
 import carpet.api.settings.SettingsManager;
 import carpet.settings.ParsedRule;
+import carpetsruaddition.CarpetSettings;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
 
@@ -16,8 +17,13 @@ import java.util.List;
 
 public final class CrashReportCarpetRules {
     private static final String UNKNOWN_SOURCE = "unknown";
+    private static volatile String cachedReport = "No modified Carpet rules.";
 
     private CrashReportCarpetRules() {
+    }
+
+    public static void refresh() {
+        cachedReport = createReport();
     }
 
     public static String createReport() {
@@ -41,6 +47,18 @@ public final class CrashReportCarpetRules {
             return builder.toString();
         } catch (Throwable throwable) {
             return "Failed to collect Carpet rules: " + throwable.getClass().getSimpleName() + ": " + throwable.getMessage();
+        }
+    }
+
+    public static String cachedReport() {
+        return cachedReport;
+    }
+
+    public static boolean isRuleEnabled() {
+        try {
+            return CarpetSettings.crashReportCarpetRules;
+        } catch (Throwable throwable) {
+            return cachedReport.contains("crashReportCarpetRules = true");
         }
     }
 
