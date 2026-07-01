@@ -106,6 +106,11 @@ public class CarpetSRUAdditionExtension implements CarpetExtension {
             ? "允许生存、创造和冒险模式的玩家看到旁观者模式下的玩家，且旁观者显示为完全不透明的玩家头颅。"
             : "Allows survival, creative, and adventure players to see spectator players, rendered as fully opaque player heads.");
 
+        translations.put("carpet.rule.superBoneMeal.name", zh ? "超级骨粉" : "Super Bone Meal");
+        translations.put("carpet.rule.superBoneMeal.desc", zh
+            ? "允许骨粉让额外的可生长方块推进一个生长阶段。plants 仅影响植物类方块；all 还会影响紫水晶母岩、滴水石等非植物可生长方块。"
+            : "Allows bone meal to advance extra growable blocks by one growth step. plants affects plant-like blocks only; all also affects non-plant growable blocks such as budding amethyst and pointed dripstone.");
+
         return translations;
     }
 }
