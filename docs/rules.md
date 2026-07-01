@@ -128,6 +128,16 @@ The `plants` option affects plant-like growable blocks that are not normally cov
 - Allowed options: `false`, `plants`, `all`
 - Categories: `feature`, `sru`
 
+## crashReportCarpetRules
+
+Adds modified Carpet rules to Minecraft crash reports, including rules loaded from configuration files and rules changed only in memory.
+
+Each listed rule includes the source mod inferred from its Carpet settings manager or declaring settings class.
+
+- Type: `boolean`
+- Default value: `false`
+- Categories: `feature`, `sru`
+
 ## Additional Commands
 
 ### `/srurecipe enable`

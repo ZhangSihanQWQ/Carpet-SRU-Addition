@@ -28,5 +28,7 @@
   "carpet.rule.visibleSpectators.name": "Visible Spectators",
   "carpet.rule.visibleSpectators.desc": "Makes spectators visible for SRU server gameplay compatibility.",
   "carpet.rule.superBoneMeal.name": "Super Bone Meal",
-  "carpet.rule.superBoneMeal.desc": "Allows bone meal to advance extra growable blocks by one growth step. plants affects plant-like blocks only; all also affects non-plant growable blocks such as budding amethyst and pointed dripstone."
+  "carpet.rule.superBoneMeal.desc": "Allows bone meal to advance extra growable blocks by one growth step. plants affects plant-like blocks only; all also affects non-plant growable blocks such as budding amethyst and pointed dripstone.",
+  "carpet.rule.crashReportCarpetRules.name": "Crash Report Carpet Rules",
+  "carpet.rule.crashReportCarpetRules.desc": "Adds modified Carpet rules and their source mods to Minecraft crash reports."
 }

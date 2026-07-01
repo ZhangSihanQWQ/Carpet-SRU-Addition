@@ -111,6 +111,11 @@ public class CarpetSRUAdditionExtension implements CarpetExtension {
             ? "允许骨粉让额外的可生长方块推进一个生长阶段。plants 仅影响植物类方块；all 还会影响紫水晶母岩、滴水石等非植物可生长方块。"
             : "Allows bone meal to advance extra growable blocks by one growth step. plants affects plant-like blocks only; all also affects non-plant growable blocks such as budding amethyst and pointed dripstone.");
 
+        translations.put("carpet.rule.crashReportCarpetRules.name", zh ? "崩溃报告记录 Carpet 规则" : "Crash Report Carpet Rules");
+        translations.put("carpet.rule.crashReportCarpetRules.desc", zh
+            ? "在 Minecraft 崩溃报告中加入已修改的 Carpet 规则及其来源模组。"
+            : "Adds modified Carpet rules and their source mods to Minecraft crash reports.");
+
         return translations;
     }
 }
