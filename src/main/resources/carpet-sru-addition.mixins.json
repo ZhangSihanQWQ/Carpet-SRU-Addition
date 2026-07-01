@@ -20,6 +20,8 @@
 		"sru.dragonbreath.AreaEffectCloudEntityMixin",
 		"sru.dragonbreath.DragonEggBlockMixin",
 		"sru.dragonbreath.GlassBottleItemMixin",
+		"sru.crash_report.DedicatedServerWatchdogMixin",
+		"sru.crash_report.MinecraftServerMixin",
 		"sru.crash_report.SettingsManagerMixin",
 		"sru.crash_report.SystemDetailsMixin",
 		"sru.freezing_tick_no_starve.ServerPlayerEntityMixin",
