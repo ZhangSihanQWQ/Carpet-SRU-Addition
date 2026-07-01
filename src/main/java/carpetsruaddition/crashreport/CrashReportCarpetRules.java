@@ -9,14 +9,20 @@ import carpetsruaddition.CarpetSettings;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
 
+import java.lang.reflect.Field;
 import java.nio.file.Path;
 import java.security.CodeSource;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public final class CrashReportCarpetRules {
     private static final String UNKNOWN_SOURCE = "unknown";
+    private static final String KEY_SEPARATOR = "\u0000";
+    private static final Map<String, String> REGISTERED_RULE_SOURCES = new ConcurrentHashMap<>();
+    private static final Map<String, String> REGISTERED_RULE_NAME_SOURCES = new ConcurrentHashMap<>();
     private static volatile String cachedReport = "No modified Carpet rules.";
 
     private CrashReportCarpetRules() {
@@ -70,6 +76,28 @@ public final class CrashReportCarpetRules {
         }
     }
 
+    public static void rememberRuleSources(SettingsManager manager, Class<?> settingsClass) {
+        if (manager == null || settingsClass == null) {
+            return;
+        }
+
+        String modId = modIdFromSettingsClass(settingsClass);
+        if (modId == null) {
+            return;
+        }
+
+        String source = displayModName(modId);
+        for (Field field : settingsClass.getDeclaredFields()) {
+            String ruleName = ruleName(field);
+            if (ruleName == null) {
+                continue;
+            }
+
+            REGISTERED_RULE_SOURCES.put(ruleKey(manager, ruleName), source);
+            REGISTERED_RULE_NAME_SOURCES.putIfAbsent(ruleName, source);
+        }
+    }
+
     private static List<RuleLine> collectModifiedRules() {
         List<RuleLine> rules = new ArrayList<>();
         CarpetServer.forEachManager(manager -> addRulesFromManager(manager, rules));
@@ -94,6 +122,11 @@ public final class CrashReportCarpetRules {
 
     @SuppressWarnings("removal")
     private static String source(CarpetRule<?> rule, SettingsManager manager) {
+        String registeredSource = registeredSource(rule, manager);
+        if (registeredSource != null) {
+            return registeredSource;
+        }
+
         Class<?> declaringClass = null;
         if (rule instanceof ParsedRule<?> parsedRule && parsedRule.field != null) {
             declaringClass = parsedRule.field.getDeclaringClass();
@@ -115,6 +148,71 @@ public final class CrashReportCarpetRules {
             modId = managerModId;
         }
         return displayModName(modId);
+    }
+
+    private static String registeredSource(CarpetRule<?> rule, SettingsManager manager) {
+        String source = REGISTERED_RULE_SOURCES.get(ruleKey(manager, rule.name()));
+        if (source != null) {
+            return source;
+        }
+
+        try {
+            source = REGISTERED_RULE_SOURCES.get(ruleKey(rule.settingsManager(), rule.name()));
+            if (source != null) {
+                return source;
+            }
+        } catch (Throwable ignored) {
+        }
+
+        return REGISTERED_RULE_NAME_SOURCES.get(rule.name());
+    }
+
+    private static String ruleKey(SettingsManager manager, String ruleName) {
+        return modIdFromManager(manager) + KEY_SEPARATOR + ruleName;
+    }
+
+    @SuppressWarnings("removal")
+    private static String ruleName(Field field) {
+        if (field.isAnnotationPresent(carpet.api.settings.Rule.class)) {
+            return field.getName();
+        }
+
+        carpet.settings.Rule rule = field.getAnnotation(carpet.settings.Rule.class);
+        if (rule == null) {
+            return null;
+        }
+
+        return rule.name().isEmpty() ? field.getName() : rule.name();
+    }
+
+    private static String modIdFromSettingsClass(Class<?> settingsClass) {
+        String modId = modIdFromModResource(settingsClass);
+        if (modId == null) {
+            modId = modIdFromClassPath(settingsClass);
+        }
+        if (modId == null) {
+            modId = modIdFromDeclaringClass(settingsClass);
+        }
+        return modId;
+    }
+
+    private static String modIdFromModResource(Class<?> declaringClass) {
+        if (declaringClass == null) {
+            return null;
+        }
+
+        String resource = declaringClass.getName().replace('.', '/') + ".class";
+        try {
+            for (ModContainer mod : FabricLoader.getInstance().getAllMods()) {
+                if (mod.findPath(resource).isPresent()) {
+                    return mod.getMetadata().getId();
+                }
+            }
+        } catch (Throwable throwable) {
+            return null;
+        }
+
+        return null;
     }
 
     private static String modIdFromRuleManager(CarpetRule<?> rule) {

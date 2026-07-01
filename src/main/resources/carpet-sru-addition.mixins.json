@@ -21,6 +21,7 @@
 		"sru.dragonbreath.DragonEggBlockMixin",
 		"sru.dragonbreath.GlassBottleItemMixin",
 		"sru.crash_report.CrashReportMixin",
+		"sru.crash_report.SettingsManagerMixin",
 		"sru.crash_report.SystemDetailsMixin",
 		"sru.freezing_tick_no_starve.ServerPlayerEntityMixin",
 		"sru.recipe.RecipeManagerMixin",
