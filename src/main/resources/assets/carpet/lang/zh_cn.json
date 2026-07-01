@@ -26,5 +26,7 @@
   "carpet.rule.limitTntRandomMomentum.name": "限制 TNT 随机动量",
   "carpet.rule.limitTntRandomMomentum.desc": "使用 SRU 配置的角度列表限制 TNT 随机动量。",
   "carpet.rule.visibleSpectators.name": "可见旁观者",
-  "carpet.rule.visibleSpectators.desc": "使旁观者可见，以兼容 SRU 服务器玩法。"
+  "carpet.rule.visibleSpectators.desc": "使旁观者可见，以兼容 SRU 服务器玩法。",
+  "carpet.rule.superBoneMeal.name": "超级骨粉",
+  "carpet.rule.superBoneMeal.desc": "允许骨粉让额外的可生长方块推进一个生长阶段。plants 仅影响植物类方块；all 还会影响紫水晶母岩、滴水石等非植物可生长方块。"
 }
