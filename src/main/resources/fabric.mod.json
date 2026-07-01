@@ -3,9 +3,9 @@
 	"id": "carpet-sru-addition",
 	"version": "${version}",
 	"name": "Carpet-SRU-Addition",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "A Carpet mod (fabric-carpet) extension, a collection of carpet mod style useful tools and interesting features",
 	"authors": [
-		"Me!"
+		"ZhangSihanQWQ"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
