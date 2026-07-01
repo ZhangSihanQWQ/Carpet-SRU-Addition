@@ -2,11 +2,13 @@ package carpetsruaddition;
 
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
+import carpet.api.settings.SettingsManager;
 import carpetsruaddition.command.HatCommand;
 import carpetsruaddition.command.SRURecipeCommand;
 import carpetsruaddition.command.LimitTntRandomMomentumCommand;
 import carpetsruaddition.command.SitCommand;
 import carpetsruaddition.command.SetCommand;
+import carpetsruaddition.crashreport.CrashReportCarpetRules;
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.command.CommandRegistryAccess;
 import net.minecraft.server.command.ServerCommandSource;
@@ -18,6 +20,8 @@ public class CarpetSRUAdditionExtension implements CarpetExtension {
     @Override
     public void onGameStarted() {
         CarpetServer.settingsManager.parseSettingsClass(CarpetSettings.class);
+        SettingsManager.registerGlobalRuleObserver((source, changedRule, userInput) -> CrashReportCarpetRules.refresh());
+        CrashReportCarpetRules.refresh();
     }
 
     @Override
