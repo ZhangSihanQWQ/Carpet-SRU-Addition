@@ -20,12 +20,18 @@
 		"sru.dragonbreath.AreaEffectCloudEntityMixin",
 		"sru.dragonbreath.DragonEggBlockMixin",
 		"sru.dragonbreath.GlassBottleItemMixin",
+		"sru.crash_report.DedicatedServerWatchdogMixin",
+		"sru.crash_report.MinecraftServerMixin",
+		"sru.crash_report.SettingsManagerMixin",
+		"sru.crash_report.SystemDetailsMixin",
 		"sru.freezing_tick_no_starve.ServerPlayerEntityMixin",
 		"sru.recipe.RecipeManagerMixin",
 		"sru.super_bone_meal.BoneMealItemMixin",
 		"sru.tnt.TntEntityMixin"
 	],
-	"client": [],
+	"client": [
+		"sru.crash_report.MinecraftClientMixin"
+	],
 	"injectors": {
 		"defaultRequire": 1
 	},

@@ -28,5 +28,7 @@
   "carpet.rule.visibleSpectators.name": "可见旁观者",
   "carpet.rule.visibleSpectators.desc": "使旁观者可见，以兼容 SRU 服务器玩法。",
   "carpet.rule.superBoneMeal.name": "超级骨粉",
-  "carpet.rule.superBoneMeal.desc": "允许骨粉让额外的可生长方块推进一个生长阶段。plants 仅影响植物类方块；all 还会影响紫水晶母岩、滴水石等非植物可生长方块。"
+  "carpet.rule.superBoneMeal.desc": "允许骨粉让额外的可生长方块推进一个生长阶段。plants 仅影响植物类方块；all 还会影响紫水晶母岩、滴水石等非植物可生长方块。",
+  "carpet.rule.crashReportCarpetRules.name": "崩溃报告记录 Carpet 规则",
+  "carpet.rule.crashReportCarpetRules.desc": "在 Minecraft 崩溃报告中加入已修改的 Carpet 规则及其来源模组。"
 }

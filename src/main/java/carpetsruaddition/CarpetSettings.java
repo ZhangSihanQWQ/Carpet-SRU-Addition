@@ -50,6 +50,9 @@ public final class CarpetSettings {
     @Rule(categories = {RuleCategory.FEATURE, "SRU"}, options = {"false", "plants", "all"})
     public static String superBoneMeal = "false";
 
+    @Rule(categories = {RuleCategory.FEATURE, "SRU"})
+    public static boolean crashReportCarpetRules = false;
+
     // Internal storage for limited angles (not exposed as a rule)
     public static String limitTntAngles = "";
 }
