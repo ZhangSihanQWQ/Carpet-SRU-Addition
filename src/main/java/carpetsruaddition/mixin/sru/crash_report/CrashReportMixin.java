@@ -19,7 +19,13 @@ public abstract class CrashReportMixin {
     @Unique
     private static final String SYSTEM_DETAILS_CARPET_RULES = "\n\tCarpet Rules: ";
 
-    @Inject(method = "addDetails", at = @At("TAIL"))
+    @Inject(
+        method = "addDetails",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/util/SystemDetails;writeTo(Ljava/lang/StringBuilder;)V"
+        )
+    )
     private void carpetSruAddition$addCarpetRulesSection(StringBuilder crashReportBuilder, CallbackInfo ci) {
         try {
             if (CrashReportCarpetRules.isRuleEnabled() && crashReportBuilder.indexOf(CARPET_RULES_HEADER) < 0) {
