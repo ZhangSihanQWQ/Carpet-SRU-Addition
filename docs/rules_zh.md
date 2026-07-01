@@ -117,6 +117,17 @@
 - 默认值：`false`
 - 分类：`feature`、`porting`
 
+## superBoneMeal
+
+允许骨粉让额外的可生长方块推进一个生长阶段。
+
+`plants` 选项会影响原版骨粉通常无法催熟的植物类可生长方块，例如下界疣、甘蔗、仙人掌和紫颂花。`all` 选项还会影响紫水晶母岩、滴水石等非植物可生长方块。动物和其它实体不受影响。
+
+- 类型：`String`
+- 默认值：`false`
+- 可用选项：`false`、`plants`、`all`
+- 分类：`feature`、`sru`
+
 ## 额外命令
 
 ### `/srurecipe enable`
