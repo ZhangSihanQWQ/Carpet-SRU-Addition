@@ -128,6 +128,16 @@
 - 可用选项：`false`、`plants`、`all`
 - 分类：`feature`、`sru`
 
+## crashReportCarpetRules
+
+将已修改的 Carpet 规则加入 Minecraft 崩溃报告，包括从配置文件加载的规则和只在内存中临时修改的规则。
+
+每条规则都会标注来源模组，来源会根据 Carpet settings manager 或规则声明类推断。
+
+- 类型：`boolean`
+- 默认值：`false`
+- 分类：`feature`、`sru`
+
 ## 额外命令
 
 ### `/srurecipe enable`
