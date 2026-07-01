@@ -54,6 +54,14 @@ public final class CrashReportCarpetRules {
         return cachedReport;
     }
 
+    public static String reportForCrash() {
+        try {
+            return createReport();
+        } catch (Throwable throwable) {
+            return cachedReport();
+        }
+    }
+
     public static boolean isRuleEnabled() {
         try {
             return CarpetSettings.crashReportCarpetRules;
