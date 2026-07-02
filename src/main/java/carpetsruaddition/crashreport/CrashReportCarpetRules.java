@@ -19,6 +19,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.WeakHashMap;
@@ -151,6 +152,11 @@ public final class CrashReportCarpetRules {
             return registeredSource;
         }
 
+        String ignySource = sourceFromIgnyRegistry(rule);
+        if (ignySource != null) {
+            return ignySource;
+        }
+
         Class<?> declaringClass = null;
         if (rule instanceof ParsedRule<?> parsedRule && parsedRule.field != null) {
             declaringClass = parsedRule.field.getDeclaringClass();
@@ -189,6 +195,64 @@ public final class CrashReportCarpetRules {
         }
 
         return REGISTERED_RULE_NAME_SOURCES.get(rule.name());
+    }
+
+    private static String sourceFromIgnyRegistry(CarpetRule<?> rule) {
+        if (rule == null || !"com.liuyue.igny.rule.BuiltRule".equals(rule.getClass().getName())) {
+            return null;
+        }
+
+        String modId = modIdFromIgnyRuleTree(rule.name());
+        if (modId == null) {
+            modId = modIdFromIgnyRuleContexts(rule.name());
+        }
+        return modId == null ? null : displayModName(modId);
+    }
+
+    private static String modIdFromIgnyRuleTree(String ruleName) {
+        try {
+            Class<?> settingsClass = Class.forName("com.liuyue.igny.IGNYSettings", false, CrashReportCarpetRules.class.getClassLoader());
+            Field ruleTreeField = settingsClass.getDeclaredField("MOD_RULE_TREE");
+            Object ruleTree = ruleTreeField.get(null);
+            if (!(ruleTree instanceof Map<?, ?> map)) {
+                return null;
+            }
+
+            for (Map.Entry<?, ?> entry : map.entrySet()) {
+                Object rules = entry.getValue();
+                if (rules instanceof Iterable<?> iterable) {
+                    for (Object name : iterable) {
+                        if (Objects.equals(ruleName, name)) {
+                            Object modId = entry.getKey();
+                            return modId instanceof String string && !string.isBlank() ? string : null;
+                        }
+                    }
+                }
+            }
+        } catch (Throwable ignored) {
+        }
+
+        return null;
+    }
+
+    private static String modIdFromIgnyRuleContexts(String ruleName) {
+        try {
+            Class<?> settingsClass = Class.forName("com.liuyue.igny.IGNYSettings", false, CrashReportCarpetRules.class.getClassLoader());
+            Object contexts = settingsClass.getMethod("listRules").invoke(null);
+            if (!(contexts instanceof Iterable<?> iterable)) {
+                return null;
+            }
+
+            for (Object context : iterable) {
+                Object name = context.getClass().getMethod("getName").invoke(context);
+                if (Objects.equals(ruleName, name)) {
+                    return "carpet-igny-addition";
+                }
+            }
+        } catch (Throwable ignored) {
+        }
+
+        return null;
     }
 
     private static String ruleKey(SettingsManager manager, String ruleName) {
