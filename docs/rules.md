@@ -159,3 +159,11 @@ Sets the executing player's size. The accepted range is `0.0625` to `1.5`.
 ### Aliases: 
 `/small` = `/set 0.5`,`/smallpro` = `/set 0.1`,`/smallpromax` = `/set 0.0625`,  
 `/big` = `/set 1`,`/bigpro` = `/set 1.2`,`/bigpromax` = `/set 1.5`.
+
+### `/log rule <rule>`
+
+Subscribes or unsubscribes the executing player to a Carpet rule value. Multiple rules can be subscribed. Subscribed rules are displayed in the player's Tab-list footer as `rule name（translated name）：value` and update when the rule changes.
+
+In the Tab-list footer, the value color indicates whether it is the rule's default value: green means default and yellow means non-default. Font decoration indicates persistence: a normal value has been written to the configuration file, while an italic and underlined value is only changed in memory and will not survive a restart. Default values also follow this persistence styling.
+
+Rule discovery first uses Carpet IGNY Addition's optional `MOD_RULE_TREE` through reflection when available, then falls back to Carpet's registered settings managers. IGNY is not a required dependency.
