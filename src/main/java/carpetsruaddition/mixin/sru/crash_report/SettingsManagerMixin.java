@@ -2,6 +2,7 @@ package carpetsruaddition.mixin.sru.crash_report;
 
 import carpet.api.settings.SettingsManager;
 import carpetsruaddition.crashreport.CrashReportCarpetRules;
+import carpetsruaddition.rulelogger.RuleLoggerManager;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -15,5 +16,10 @@ public abstract class SettingsManagerMixin {
             CrashReportCarpetRules.rememberRuleSources((SettingsManager) (Object) this, settingsClass);
         } catch (Throwable ignored) {
         }
+    }
+
+    @Inject(method = "writeSettingsToConf", at = @At("TAIL"), remap = false)
+    private void carpetSruAddition$refreshRuleLoggerAfterConfigWrite(CallbackInfo ci) {
+        RuleLoggerManager.refreshAll();
     }
 }

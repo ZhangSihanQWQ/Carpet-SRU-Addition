@@ -33,9 +33,6 @@ public final class RuleLoggerManager {
 
     public static void refreshAll() {
         refreshAllNow();
-        if (CarpetServer.minecraft_server != null) {
-            CarpetServer.minecraft_server.execute(RuleLoggerManager::refreshAllNow);
-        }
     }
 
     private static void refreshAllNow() {
