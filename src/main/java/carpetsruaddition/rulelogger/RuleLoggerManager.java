@@ -5,15 +5,15 @@ import carpet.CarpetExtension;
 import carpet.api.settings.CarpetRule;
 import carpet.api.settings.RuleHelper;
 import carpet.api.settings.SettingsManager;
-import carpet.logging.LoggerRegistry;
 import carpet.utils.Translations;
 import net.minecraft.network.packet.s2c.play.PlayerListHeaderS2CPacket;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.WorldSavePath;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
@@ -39,9 +39,12 @@ public final class RuleLoggerManager {
     }
 
     private static void refreshAllNow() {
-        RuleLogger logger = getLogger();
-        if (logger != null) {
-            logger.log(() -> new Text[0]);
+        MinecraftServer server = CarpetServer.minecraft_server;
+        if (server == null) {
+            return;
+        }
+        for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
+            refreshPlayer(player);
         }
     }
 
@@ -109,10 +112,6 @@ public final class RuleLoggerManager {
         return result;
     }
 
-    private static RuleLogger getLogger() {
-        return LoggerRegistry.getLogger("rule") instanceof RuleLogger logger ? logger : null;
-    }
-
     private static String chineseRuleName(String ruleName) {
         String key = "carpet.rule." + ruleName + ".name";
         String translated = Translations.getTranslationFromResourcePath("assets/carpet/lang/zh_cn.json").get(key);
@@ -130,9 +129,12 @@ public final class RuleLoggerManager {
 
     private static boolean isConfiguredValue(CarpetRule<?> rule) {
         try {
-            Method getFile = SettingsManager.class.getDeclaredMethod("getFile");
-            getFile.setAccessible(true);
-            Path file = (Path) getFile.invoke(rule.settingsManager());
+            MinecraftServer server = CarpetServer.minecraft_server;
+            SettingsManager manager = rule.settingsManager();
+            if (server == null || manager == null) {
+                return false;
+            }
+            Path file = server.getSavePath(WorldSavePath.ROOT).resolve(manager.identifier() + ".conf");
             if (!Files.isRegularFile(file)) {
                 return false;
             }
