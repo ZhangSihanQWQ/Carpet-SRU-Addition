@@ -9,6 +9,9 @@ import carpetsruaddition.command.LimitTntRandomMomentumCommand;
 import carpetsruaddition.command.SitCommand;
 import carpetsruaddition.command.SetCommand;
 import carpetsruaddition.crashreport.CrashReportCarpetRules;
+import carpetsruaddition.command.RuleLoggerCommand;
+import carpetsruaddition.rulelogger.RuleLogger;
+import carpetsruaddition.rulelogger.RuleLoggerManager;
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.command.CommandRegistryAccess;
 import net.minecraft.server.command.ServerCommandSource;
@@ -21,6 +24,7 @@ public class CarpetSRUAdditionExtension implements CarpetExtension {
     public void onGameStarted() {
         CarpetServer.settingsManager.parseSettingsClass(CarpetSettings.class);
         SettingsManager.registerGlobalRuleObserver((source, changedRule, userInput) -> CrashReportCarpetRules.refresh());
+        SettingsManager.registerGlobalRuleObserver((source, changedRule, userInput) -> RuleLoggerManager.refreshAll());
         CrashReportCarpetRules.refresh();
     }
 
@@ -36,6 +40,12 @@ public class CarpetSRUAdditionExtension implements CarpetExtension {
         HatCommand.register(dispatcher);
         SitCommand.register(dispatcher);
         SetCommand.register(dispatcher);
+        RuleLoggerCommand.register(dispatcher);
+    }
+
+    @Override
+    public void registerLoggers() {
+        carpet.logging.LoggerRegistry.registerLogger("rule", new RuleLogger());
     }
 
     @Override
